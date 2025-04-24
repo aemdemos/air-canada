@@ -21,17 +21,10 @@
       "id": "locator",
       "fields": [
         {
-          "component": "link",
+          "component": "richtext",
           "valueType": "string",
-          "name": "link",
-          "label": "Link"
-        },
-        {
-          "component": "text",
-          "name": "text",
-          "value": "",
-          "label": "Text",
-          "valueType": "string"
+          "name": "locator",
+          "label": "Page Links"
         }
       ]
     }
