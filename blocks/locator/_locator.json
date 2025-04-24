@@ -22,7 +22,6 @@
       "fields": [
         {
           "component": "richtext",
-          "valueType": "string",
           "name": "links",
           "label": "Page Links"
         }
