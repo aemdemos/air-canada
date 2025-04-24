@@ -214,5 +214,23 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "locator",
+    "fields": [
+      {
+        "component": "link",
+        "valueType": "string",
+        "name": "link",
+        "label": "Link"
+      },
+      {
+        "component": "text",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      }
+    ]
   }
 ]
