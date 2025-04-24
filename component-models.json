@@ -221,7 +221,9 @@
       {
         "component": "richtext",
         "name": "links",
-        "label": "Page Links"
+        "value": "",
+        "label": "Links",
+        "valueType": "string"
       }
     ]
   }
