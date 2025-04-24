@@ -220,7 +220,7 @@
     "fields": [
       {
         "component": "richtext",
-        "name": "links",
+        "name": "text",
         "value": "",
         "label": "Links",
         "valueType": "string"
