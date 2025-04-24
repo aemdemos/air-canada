@@ -221,7 +221,7 @@
       {
         "component": "richtext",
         "valueType": "string",
-        "name": "locator",
+        "name": "links",
         "label": "Page Links"
       }
     ]
