@@ -20,6 +20,12 @@
     ]
   },
   {
+    "id": "breadcrumbs",
+    "components": [
+      "breadcrumb-list"
+    ]
+  },
+  {
     "id": "cards",
     "components": [
       "card"
