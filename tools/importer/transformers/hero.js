@@ -10,15 +10,15 @@ const createHero = (main, document, params) => {
     const headerEl = hero.querySelector('.header-text');
     const pillEl = headerEl.querySelector('.red-pill');
 
-    const textEl = document.createElement('div')
-    textEl.append(headerEl.querySelector('h1'));
-    textEl.append(headerEl.querySelector('h2'));
+    const richText = document.createElement('div');
+    richText.append(headerEl.querySelector('h1'));
+    richText.append(headerEl.querySelector('h2'));
 
     const cells = [
       ['Hero'],
       [picImg],
       [pillEl],
-      [textEl],
+      [richText],
     ];
 
     const block = WebImporter.DOMUtils.createTable(cells, document);
