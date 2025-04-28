@@ -46,8 +46,12 @@ export default {
       '.full-page-blockUI',
       '.page-header',
       '#onetrust-consent-sdk',
+      '.overview > :not(.header-infinite)',
+      '#credit-card-tabs',
+      '.afterHero',
+      '.tab-content',
+      '.cc-nav',
       '.page-aside',
-      'main',
       '#skipNav',
       'footer',
     ]);

@@ -219,6 +219,13 @@
         "value": ""
       },
       {
+        "component": "text",
+        "name": "pill",
+        "label": "Pill Text",
+        "value": "",
+        "valueType": "string"
+      },
+      {
         "component": "richtext",
         "name": "text",
         "value": "",
