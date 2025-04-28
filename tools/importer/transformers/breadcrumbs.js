@@ -5,16 +5,16 @@ const createBreadcrumbs = (main, document, params) => {
   // get all ul elements that have the style display: block;
   const allBreadcrumbUls = breadcrumb.querySelectorAll('ul');
   // remove all ul elements that do not have [style="display: block;"]
-  const rows = [];
+  const cells = [['Breadcrumbs']];
   allBreadcrumbUls.forEach((ul) => {
     if (!ul.style.display || ul.style.display !== 'block') {
       ul.remove();
     } else {
-      rows.push([ul]);
+      cells.push([ul]);
     }
   });
 
-  const cells = [['Breadcrumbs'], rows];
+
 
   const block = WebImporter.DOMUtils.createTable(cells, document);
   breadcrumb.append(block);

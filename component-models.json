@@ -142,13 +142,13 @@
     ]
   },
   {
-    "id": "breadcrumb-list",
+    "id": "breadcrumb-items",
     "fields": [
       {
         "component": "richtext",
         "name": "text",
         "value": "",
-        "label": "Breadcrumb List",
+        "label": "Items",
         "valueType": "string"
       }
     ]

@@ -16,15 +16,15 @@
       }
     },
     {
-      "title": "Breadcrumb List",
-      "id": "breadcrumb-list",
+      "title": "Breadcrumb Items",
+      "id": "breadcrumb-items",
       "plugins": {
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/block/v1/block/item",
             "template": {
-              "name": "Breadcrumb List",
-              "model": "breadcrumb-list"
+              "name": "Breadcrumb Items",
+              "model": "breadcrumb-items"
             }
           }
         }
@@ -33,13 +33,13 @@
   ],
   "models": [
     {
-      "id": "breadcrumb-list",
+      "id": "breadcrumb-items",
       "fields": [
         {
           "component": "richtext",
           "name": "text",
           "value": "",
-          "label": "Breadcrumb List",
+          "label": "Items",
           "valueType": "string"
         }
       ]
@@ -49,7 +49,7 @@
     {
       "id": "breadcrumbs",
       "components": [
-        "breadcrumb-list"
+        "breadcrumb-items"
       ]
     }
   ]

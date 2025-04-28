@@ -22,7 +22,7 @@
   {
     "id": "breadcrumbs",
     "components": [
-      "breadcrumb-list"
+      "breadcrumb-items"
     ]
   },
   {
