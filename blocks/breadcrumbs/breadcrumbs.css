@@ -1,15 +1,40 @@
-.locator-wrapper {
+.breadcrumbs-wrapper {
   margin: 0;
 }
 
-.locator {
+.breadcrumbs {
+  display: flex;
+  justify-content: flex-start;
+  gap: 50px;
+}
 
-  .nav-drop::after {
+.breadcrumbs {
+  ul {
+    list-style: none;
+    max-width: 300px;
+  }
+
+  .nav-drop li {
+    display: none;
+  }
+
+  .nav-drop li:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .nav-drop:hover li {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-drop li:first-child::after {
     content: '';
-    display: inline-block;
     position: absolute;
-    top: 20px;
-    right: -15px;
+    right: -20px;
+    display: inline-block;
     transform: rotate(135deg);
     width: 6px;
     height: 6px;
@@ -17,60 +42,19 @@
     border-radius: 0 1px 0 0;
     border-width: 2px 2px 0 0;
   }
+
+  ul:hover {
+    li {
+      display: block;
+      background-color: #fff;
+    }
+  }
 }
 
-.locator nav {
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: left;
-  gap: 50px;
-}
-
-.locator nav.nav-sections {
-  backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.7);
-}
-
-.locator nav a:any-link {
+.breadcrumbs a:any-link {
   color: currentcolor;
   font-weight: 600;
   background-color: transparent;
   font-size: 16px;
   text-decoration: none;
-}
-
-.locator nav.nav-sections>li {
-  list-style: none;
-  align-content: space-evenly;
-  position: relative;
-  height: 100%;
-}
-
-.locator nav.nav-sections>li>ul {
-  max-width: 300px;
-  width: 25%;
-  min-width: 25%;
-  display: none;
-  position: relative;
-}
-
-.locator nav.nav-sections>li[aria-expanded='true']>ul {
-  display: block;
-  position: absolute;
-  width: 100%;
-  padding: 0;
-  white-space: initial;
-  top: 36px;
-  border-top: solid 1px #d0d0ce;
-  list-style: none;
-  background-color: #fff;
-}
-
-.locator nav.nav-sections>li[aria-expanded='true']>ul>li {
-  padding: 8px 16px;
-
-  &:hover {
-    background-color: #efefef;
-  }
 }
