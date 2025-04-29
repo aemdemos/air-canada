@@ -1,7 +1,11 @@
 :root {
   --header-nav-brand-height: 28px;
   --header-nav-brand-width: 240px;
-  --header-nav-height: 80px;
+  --header-nav-height: 86px;
+}
+
+header {
+  height: var(--header-nav-height);
 }
 
 /* header and nav layout */
