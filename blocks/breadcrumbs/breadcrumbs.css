@@ -13,6 +13,7 @@
   list-style: none;
   margin: 0;
   max-width: 400px;
+  min-width: 280px;
 }
 
 .breadcrumbs ul li {

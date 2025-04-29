@@ -81,3 +81,60 @@
     padding: 40px 32px;
   }
 }
+
+.hero {
+  h1 {
+    font: normal 700 45px Open Sans;
+    background: transparent;
+  }
+
+  @media only screen and (max-width: 767px) {
+    h1 {
+      font: normal 700 30px Open Sans
+    }
+  }
+
+  h2 {
+    font: normal 600 28px Open Sans;
+    background: transparent;
+  }
+
+  @media only screen and (max-width: 767px) {
+    h2 {
+      font: normal 600 18px Open Sans;
+    }
+  }
+
+  h3 {
+    font: normal 600 20px Open Sans;
+    background: transparent;
+  }
+
+  @media only screen and (max-width: 767px) {
+    h3 {
+      font: normal 600 16px Open Sans;
+    }
+  }
+
+  h4 {
+    font: normal 300 18px Open Sans;
+    background: transparent;
+  }
+
+  @media only screen and (max-width: 767px) {
+    h4 {
+      font: normal normal 14px Open Sans;
+    }
+  }
+
+  h5 {
+    font: normal 400 16px Open Sans;
+    background: transparent;
+  }
+
+  @media only screen and (max-width: 767px) {
+    h5 {
+      font: normal 400 14px Open Sans;
+    }
+  }
+}

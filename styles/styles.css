@@ -129,6 +129,11 @@ h6 {
   font-size: var(--heading-font-size-xs);
 }
 
+sup {
+  font-size: 75%;
+  line-height: 0;
+}
+
 p,
 dl,
 ol,
