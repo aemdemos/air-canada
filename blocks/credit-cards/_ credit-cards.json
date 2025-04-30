@@ -48,9 +48,15 @@
       "id": "creditcard",
       "fields": [
         {
-          "component": "richtext",
+          "component": "text",
           "valueType": "string",
           "name": "link",
+          "label": "Link"
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "linkText",
           "label": "Link"
         },
         {

@@ -1,5 +1,6 @@
 /* global WebImporter */
 
+
 const createCreditcards = (main, document, params) => {
   const creditcards = main.querySelector('div.ae-content.top.afterHero');
 
@@ -19,10 +20,10 @@ const createCreditcards = (main, document, params) => {
     cards.forEach(card => {
       const title = card.querySelector('.responsive-cc-title');
 
-      const newLink = document.createElement('a');
       const link = card.querySelector('.sub-nav-tabs');
+      const newLink = document.createElement('a');
       newLink.href = link.href;
-      newLink.innerHTML = link.innerHTML.trim();
+      newLink.innerHTML = link.querySelector('span').innerHTML.trim()
 
       const banner = card.querySelector('.banner > p');
       const image = card.querySelector('img');
