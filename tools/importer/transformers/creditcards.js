@@ -21,10 +21,6 @@ const createCreditcards = (main, document, params) => {
       const title = card.querySelector('.responsive-cc-title');
 
       const link = card.querySelector('.sub-nav-tabs');
-      const newLink = document.createElement('a');
-      newLink.href = link.href;
-      newLink.innerHTML = link.querySelector('span').innerHTML.trim()
-
       const banner = card.querySelector('.banner > p');
       const image = card.querySelector('img');
 
@@ -33,7 +29,7 @@ const createCreditcards = (main, document, params) => {
         image.setAttribute('alt', imageAlt);
       }
 
-      cells.push([newLink, image, banner.innerHTML, title]);
+      cells.push([link, image, banner.innerHTML, title]);
       card.remove();
     });
 
