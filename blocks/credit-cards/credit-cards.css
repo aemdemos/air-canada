@@ -1,0 +1,63 @@
+.credit-cards h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font: normal 300 36px Open Sans;
+  background: transparent;
+  color: #000;
+}
+
+.credit-cards .cards-wrapper {
+  display: flex;
+  gap: 2rem;
+}
+
+.credit-cards .cards-wrapper>div {
+  flex-basis: 33%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 35px !important;
+}
+
+.credit-cards .cards-wrapper>div>div {
+  text-align: center;
+  min-width: 220px;
+  margin-bottom: 15px;
+}
+
+.credit-cards .cards-wrapper a {
+  color: #000;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 14px;
+  text-align: center;
+  padding: 0px;
+  border-bottom: none;
+  text-align: center;
+  margin-bottom: 15px;
+  background-color: transparent;
+}
+
+
+/* Image styling */
+.credit-cards .cards-wrapper img {
+  max-width: 180px;
+  display: block;
+  margin: 0 auto;
+}
+
+.credit-cards .banner {
+  background-size: contain;
+  background: url(../../icons/td-aeroplan-rectangle-white.svg) no-repeat center center;
+  background-size: contain;
+  width: 340px;
+  height: 60px;
+  position: relative;
+  margin-top: -35px;
+  text-align: center;
+}
+
+.credit-cards .banner.active {
+  background: url(../../icons/td-aeroplan-rectangle.svg) no-repeat center center;
+}

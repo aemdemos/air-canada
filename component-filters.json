@@ -45,5 +45,11 @@
       "button",
       "title"
     ]
+  },
+  {
+    "id": "creditcards",
+    "components": [
+      "creditcard"
+    ]
   }
 ]
