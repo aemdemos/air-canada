@@ -29,9 +29,8 @@ export default function decorate(block) {
     const li = document.createElement('li');
     li.classList.add('card');
     li.append(...div.children);
-    moveInstrumentation(div, li);
-    div.remove();
     cardsWrapper.append(li);
+    moveInstrumentation(div, li);
   });
 
 
