@@ -3,9 +3,14 @@
   background: #fff;
   padding-top: 1em !important;
   box-shadow: 0 -6px 19px -7px rgb(0 0 0 / 20%);
+  user-select: none;
 }
 
 .credit-cards.mobile {
+  .mobile-cc-container {
+    cursor: pointer;
+  }
+
   .cards-wrapper {
     flex-direction: column;
     padding: 0px;
@@ -30,6 +35,11 @@
         }
       }
     }
+  }
+
+  /* show the card-wrapper when the drop down is open */
+  .mobile-cc-container:has(> .rotate)+.cards-wrapper {
+    display: none;
   }
 }
 
