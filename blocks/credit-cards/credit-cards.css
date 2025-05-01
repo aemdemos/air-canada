@@ -1,3 +1,38 @@
+.credit-cards-wrapper {
+  margin-top: -140px !important;
+  background: #fff;
+  padding-top: 1em !important;
+  box-shadow: 0 -6px 19px -7px rgb(0 0 0 / 20%);
+}
+
+.credit-cards.mobile {
+  .cards-wrapper {
+    flex-direction: column;
+    padding: 0px;
+    margin-top: 0px;
+
+    .card {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      padding: 5px 30px;
+      background-color: #fff;
+
+      .title {
+        margin: 0px;
+        min-width: unset;
+        font-weight: 700;
+        color: grey;
+        text-transform: uppercase;
+        font-size: 13px;
+
+        br {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
 .credit-cards h1 {
   text-align: center;
   margin-bottom: 30px;
@@ -8,18 +43,27 @@
 
 .credit-cards .cards-wrapper {
   display: flex;
-  gap: 2rem;
+  justify-content: center;
+  flex-wrap: nowrap;
+  list-style: none;
 }
 
-.credit-cards .cards-wrapper>div {
-  flex-basis: 33%;
+.credit-cards .card {
+  border: solid 1px #f1f1f1;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  flex: 1 1 33%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px 35px !important;
+  padding: 20px;
 }
 
-.credit-cards .cards-wrapper>div>div {
+.credit-cards .card.active {
+  background-color: #fff;
+}
+
+.credit-cards .card .title {
   text-align: center;
   min-width: 220px;
   margin-bottom: 15px;
@@ -48,7 +92,6 @@
 }
 
 .credit-cards .banner {
-  background-size: contain;
   background: url(../../icons/td-aeroplan-rectangle-white.svg) no-repeat center center;
   background-size: contain;
   width: 340px;
@@ -60,4 +103,73 @@
 
 .credit-cards .banner.active {
   background: url(../../icons/td-aeroplan-rectangle.svg) no-repeat center center;
+}
+
+.credit-cards .mobile.title {
+  display: none;
+}
+
+.credit-cards .mobile-cc-container {
+  display: none;
+}
+
+
+@media only screen and (min-width: 1024px) and (max-width: 1299px) {
+  .credit-cards .cards-wrapper .card {
+    padding: 20px 0px;
+  }
+}
+
+/* for width less than 1024px */
+@media (max-width: 1024px) {
+  .credit-cards .mobile-cc-container {
+    display: block;
+    box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.15);
+    background-color: #ffffff;
+    padding: 40px 40px 20px 30px;
+    text-align: left;
+    position: relative;
+  }
+
+  .credit-cards .mobile-cc-container .dropdown-label {
+    font-size: 12px;
+    line-height: 1.75;
+    color: #4a4f55;
+    position: absolute;
+    top: 10px;
+  }
+
+  .credit-cards .mobile-cc-container .mobile-content {
+    font: normal 600 18px Open Sans;
+    color: #000;
+  }
+
+  .credit-cards .mobile-cc-container .dropdown-arrow {
+    content: url(/icons/icon-down-arrow.svg);
+    display: block;
+    width: 24px;
+    height: 24px;
+    -o-object-fit: contain;
+    object-fit: contain;
+    float: left;
+    margin-right: -20px;
+    margin-top: -3px;
+    -webkit-column-break-inside: avoid;
+    break-inside: avoid;
+    float: right;
+    transition: transform 0.3s ease-in-out;
+
+    &.rotate {
+      transform: rotate(180deg);
+    }
+  }
+
+
+  .credit-cards .cards-wrapper .card>div:not(.title) {
+    display: none;
+  }
+
+  .credit-cards .mobile.title {
+    display: block;
+  }
 }

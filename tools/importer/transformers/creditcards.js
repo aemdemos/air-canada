@@ -29,7 +29,14 @@ const createCreditcards = (main, document, params) => {
         image.setAttribute('alt', imageAlt);
       }
 
-      cells.push([link, image, banner.innerHTML, title]);
+      const cleanedLink = document.createElement('a');
+      cleanedLink.href = link.getAttribute('href');
+
+      const text = link.querySelector('.title').innerHTML;
+
+      cleanedLink.innerHTML = text;
+
+      cells.push([cleanedLink, image, banner, title]);
       card.remove();
     });
 
