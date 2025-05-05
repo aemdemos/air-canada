@@ -148,8 +148,7 @@
         "component": "richtext",
         "name": "text",
         "value": "",
-        "label": "Items",
-        "valueType": "string"
+        "label": "Items"
       }
     ]
   },
