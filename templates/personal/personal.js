@@ -38,5 +38,5 @@ document.addEventListener('aue:ui-select', (event) => {
   });
 
   // add active class to the hero that was selected
-  event.target.closest('.hero').classList.add('active');
+  event.target.classList.add('active');
 });
