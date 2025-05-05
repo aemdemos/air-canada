@@ -1,3 +1,6 @@
+// find the heros element then make the second div active
+document.querySelector('.heros>div:nth-child(2)').classList.add('active');
+
 // Add event listener for credit card selection
 document.addEventListener('credit-card-selected', (event) => {
   const { cardIndex, cardElement } = event.detail;

@@ -1,1 +1,11 @@
-.personal {}
+.personal {
+
+  .hero {
+    display: none;
+  }
+
+  .hero.active {
+    display: block;
+  }
+
+}
