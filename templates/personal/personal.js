@@ -32,11 +32,5 @@ document.addEventListener('credit-card-selected', (event) => {
 
 // add an event listener for the event aue:ui-select  
 document.addEventListener('aue:ui-select', (event) => {
-  // remove active class from all heros
-  document.querySelectorAll('.hero').forEach(hero => {
-    hero.classList.remove('active');
-  });
-
-  // add active class to the hero that was selected
-  event.target.classList.add('active');
+  event.target.toggleClass('active');
 });
