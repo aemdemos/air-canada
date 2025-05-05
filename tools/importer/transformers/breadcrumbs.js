@@ -1,5 +1,3 @@
-import { moveInstrumentation } from '../../scripts/scripts.js';
-
 /* global WebImporter */
 const createBreadcrumbs = (main, document, params) => {
   const breadcrumb = main.querySelector('.breadcrumb');

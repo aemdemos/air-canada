@@ -37,7 +37,7 @@
       "fields": [
         {
           "component": "richtext",
-          "name": "textvalue",
+          "name": "text",
           "value": "",
           "label": "Items"
         }
