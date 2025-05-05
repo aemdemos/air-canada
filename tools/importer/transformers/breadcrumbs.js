@@ -1,3 +1,5 @@
+import { moveInstrumentation } from '../../scripts/scripts.js';
+
 /* global WebImporter */
 const createBreadcrumbs = (main, document, params) => {
   const breadcrumb = main.querySelector('.breadcrumb');
@@ -5,6 +7,7 @@ const createBreadcrumbs = (main, document, params) => {
   if (breadcrumb) {
     // get all ul elements that have the style display: block;
     const allBreadcrumbUls = breadcrumb.querySelectorAll('ul');
+    moveInstrumentation(breadcrumb, allBreadcrumbUls);
     // remove all ul elements that do not have [style="display: block;"]
     const cells = [['Breadcrumbs']];
     allBreadcrumbUls.forEach((ul) => {
