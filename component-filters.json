@@ -51,5 +51,11 @@
     "components": [
       "creditcard"
     ]
+  },
+  {
+    "id": "heros",
+    "components": [
+      "hero"
+    ]
   }
 ]

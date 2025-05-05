@@ -19,7 +19,7 @@
 }
 
 .hero h2 {
-  color: #fff;
+  color: #fff !important;
   font: normal 600 28px Open Sans;
   background: transparent;
   margin: 0 0 10px;

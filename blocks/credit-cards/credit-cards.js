@@ -1,9 +1,7 @@
 import { moveInstrumentation } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
-
   const h1 = block.querySelector('h1');
-  // delete the first div
   block.firstElementChild.remove();
 
   /* Mobile Container */
@@ -19,65 +17,52 @@ export default function decorate(block) {
     mobileContainer.querySelector('.dropdown-arrow').classList.toggle('rotate');
   });
 
-  /* End Mobile Container */
-
   const cardsWrapper = document.createElement('ul');
   cardsWrapper.classList.add('cards-wrapper');
 
-  // for each div replace it with a li
-  block.querySelectorAll(':scope > div').forEach(div => {
+  // Convert divs to list items and add appropriate classes
+  block.querySelectorAll(':scope > div').forEach((div, index) => {
     const li = document.createElement('li');
-    li.classList.add('card');
+    li.classList.add('card', index === 1 ? 'active' : 'x');
+
+    // Add click handler to dispatch custom event
+    li.addEventListener('click', () => {
+      const event = new CustomEvent('credit-card-selected', {
+        detail: {
+          cardIndex: index,
+          cardElement: li,
+          // Add more details as needed
+        },
+        bubbles: true
+      });
+      li.dispatchEvent(event);
+    });
+
+    // Add classes to children
+    [...div.children].forEach((child, childIndex) => {
+      const classes = [
+        ['title'],
+        ['image'],
+        ['banner', index === 1 ? 'active' : 'x'],
+        ['mobile', 'title']
+      ][childIndex] || [];
+      child.classList.add(...classes);
+    });
+
     li.append(...div.children);
     cardsWrapper.append(li);
     moveInstrumentation(div, li);
   });
 
+  cardsWrapper.querySelectorAll('a').forEach(a => a.classList.remove('button'));
 
-  cardsWrapper.querySelectorAll(':scope > li').forEach((div, index) => {
-    div.classList.add('card', index == 1 ? 'active' : 'x');
-    cardsWrapper.append(div);
-
-    if (div.children[0]) {
-      div.children[0].classList.add('title');
-    }
-
-    if (div.children[1]) {
-      div.children[1].classList.add('image');
-    }
-
-    if (div.children[2]) {
-      div.children[2].classList.add('banner', index == 1 ? 'active' : 'x');
-    }
-
-    if (div.children[3]) {
-      div.children[3].classList.add('mobile', 'title');
-    }
-  });
-
-
-  // remove all .button classes from the a tags
-  cardsWrapper.querySelectorAll('a').forEach(a => {
-    a.classList.remove('button');
-  });
+  // Handle mobile/desktop view
+  const updateView = () => {
+    block.classList.toggle('mobile', window.innerWidth < 1024);
+  };
+  updateView();
+  window.addEventListener('resize', updateView);
 
   block.innerHTML = '';
-
-  // add the class 'mobile' to the block if the screen is less than 1024px
-  if (window.innerWidth < 1024) {
-    block.classList.add('mobile');
-  }
-
-  // listen for resize events and if the screen is less than 1024px, add the class 'mobile' to the cardsWrapper
-  window.addEventListener('resize', () => {
-    if (window.innerWidth < 1024) {
-      block.classList.add('mobile');
-    } else {
-      block.classList.remove('mobile');
-    }
-  });
-
-  block.append(h1);
-  block.append(mobileContainer);
-  block.append(cardsWrapper);
+  block.append(h1, mobileContainer, cardsWrapper);
 }
