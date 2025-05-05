@@ -32,5 +32,5 @@ document.addEventListener('credit-card-selected', (event) => {
 
 // add an event listener for the event aue:ui-select  
 document.addEventListener('aue:ui-select', (event) => {
-  event.target.toggleClass('active');
+  event.target.classList.toggle('active');
 });
