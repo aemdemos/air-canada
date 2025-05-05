@@ -6,34 +6,27 @@ document.addEventListener('credit-card-selected', (event) => {
   const { cardIndex, cardElement } = event.detail;
   const cardsWrapper = document.querySelector('.cards-wrapper');
 
+  // update the active card
   if (cardsWrapper) {
-    // Remove active class from all cards
     cardsWrapper.querySelectorAll('.card').forEach(card => {
       card.classList.remove('active');
-      card.classList.add('x');
     });
-
-    // Add active class to selected card
-    cardElement.classList.remove('x');
     cardElement.classList.add('active');
+  }
 
-    // Update banner active state
-    const banner = cardElement.querySelector('.banner');
-    if (banner) {
-      cardsWrapper.querySelectorAll('.banner').forEach(b => {
-        b.classList.remove('active');
-        b.classList.add('x');
-      });
-      banner.classList.remove('x');
-      banner.classList.add('active');
-    }
+  // update the hero class by finding the heros element then select the hero by cardIndex
+  const heros = document.querySelector('.heros');
+  const hero = heros.querySelector(`.hero:nth-child(${cardIndex + 1})`);
+  if (hero) {
+    document.querySelectorAll('.hero').forEach(hero => {
+      hero.classList.remove('active');
+    });
+    hero.classList.add('active');
   }
 });
 
 // add an event listener for the event aue:ui-select  
 document.addEventListener('aue:ui-select', (event) => {
-
-
   // update the hero class
   if (event.target.classList.contains('hero') || event.target.closest('.hero')) {
     // get ther hero 

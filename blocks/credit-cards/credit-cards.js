@@ -23,7 +23,10 @@ export default function decorate(block) {
   // Convert divs to list items and add appropriate classes
   block.querySelectorAll(':scope > div').forEach((div, index) => {
     const li = document.createElement('li');
-    li.classList.add('card', index === 1 ? 'active' : 'x');
+    li.classList.add('card');
+    if (index === 1) {
+      li.classList.add('active');
+    }
 
     // Add click handler to dispatch custom event
     li.addEventListener('click', () => {
@@ -43,7 +46,7 @@ export default function decorate(block) {
       const classes = [
         ['title'],
         ['image'],
-        ['banner', index === 1 ? 'active' : 'x'],
+        ['banner'],
         ['mobile', 'title']
       ][childIndex] || [];
       child.classList.add(...classes);
