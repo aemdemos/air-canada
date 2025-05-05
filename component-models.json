@@ -146,7 +146,7 @@
     "fields": [
       {
         "component": "richtext",
-        "name": "text",
+        "name": "textvalue",
         "value": "",
         "label": "Items"
       }
