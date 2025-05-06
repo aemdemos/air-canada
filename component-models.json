@@ -339,7 +339,8 @@
       {
         "component": "richtext",
         "name": "oldoffer",
-        "label": "Old Offer"
+        "label": "Old Offer",
+        "valueType": "string"
       }
     ]
   }
