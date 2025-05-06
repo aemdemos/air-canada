@@ -1,43 +1,43 @@
-// find the heros element then make the second div active
-document.querySelector('.heros>div:nth-child(2)').classList.add('active');
+import { div } from '../../scripts/dom-helpers.js';
 
-// Add event listener for credit card selection
-document.addEventListener('credit-card-selected', (event) => {
-  const { cardIndex, cardElement } = event.detail;
-  const cardsWrapper = document.querySelector('.cards-wrapper');
+function addListeners() {
 
-  // update the active card
-  if (cardsWrapper) {
-    cardsWrapper.querySelectorAll('.card').forEach(card => {
-      card.classList.remove('active');
-    });
-    cardElement.classList.add('active');
-  }
+  // find the heros element then make the second div active
+  document.querySelector('.heros>div:nth-child(2)').classList.add('active');
 
-  // update the hero class by finding the heros element then select the hero by cardIndex
-  const heros = document.querySelector('.heros');
-  const hero = heros.querySelector(`.hero:nth-child(${cardIndex + 1})`);
-  if (hero) {
-    document.querySelectorAll('.hero').forEach(hero => {
-      hero.classList.remove('active');
-    });
-    hero.classList.add('active');
-  }
-});
+  // Add event listener for credit card selection
+  document.addEventListener('credit-card-selected', (event) => {
+    const { cardIndex, cardElement } = event.detail;
+    const cardsWrapper = document.querySelector('.cards-wrapper');
 
-// add an event listener for the event aue:ui-select  
-document.addEventListener('aue:ui-select', (event) => {
-  // update the hero class
-  if (event.target.classList.contains('hero') || event.target.closest('.hero')) {
-    // get ther hero 
-    const hero = event.target.closest('.hero');
+    // update the active card
+    if (cardsWrapper) {
+      cardsWrapper.querySelectorAll('.card').forEach(card => {
+        card.classList.remove('active');
+      });
+      cardElement.classList.add('active');
+    }
 
-    // remove active class from all heros
-    document.querySelectorAll('.hero').forEach(hero => {
-      hero.classList.remove('active');
-    });
+    // update the hero class by finding the heros element then select the hero by cardIndex
+    const heros = document.querySelector('.heros');
+    const hero = heros.querySelector(`.hero:nth-child(${cardIndex + 1})`);
+    if (hero) {
+      document.querySelectorAll('.hero').forEach(hero => {
+        hero.classList.remove('active');
+      });
+      hero.classList.add('active');
+    }
+  });
+}
 
-    // add active class to the hero that was selected
-    hero.classList.add('active');
-  }
-});
+export default async function decorate(doc) {
+  addListeners();
+  const $creditCardTabs = div({ class: 'credit-card-tabs' });
+  const ccWrapper = doc.querySelector('.credit-cards-wrapper');
+  $creditCardTabs.append(ccWrapper);
+
+  // find the heros-wrapper
+  const herosWrapper = doc.querySelector('.heros-wrapper');
+  // add the $creditCardTabs after the heros-wrapper
+  herosWrapper.parentNode.insertBefore($creditCardTabs, herosWrapper.nextSibling);
+}

@@ -48,6 +48,13 @@
     ]
   },
   {
+    "id": "credit-card-tabs",
+    "components": [
+      "credit-cards",
+      "banner"
+    ]
+  },
+  {
     "id": "creditcards",
     "components": [
       "creditcard"
