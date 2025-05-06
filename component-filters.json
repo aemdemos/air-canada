@@ -17,13 +17,20 @@
       "columns",
       "fragment",
       "locator",
-      "banner"
+      "banner",
+      "cards-toggle"
     ]
   },
   {
     "id": "breadcrumbs",
     "components": [
       "breadcrumb-items"
+    ]
+  },
+  {
+    "id": "cards-toggle",
+    "components": [
+      "card-toggle-item"
     ]
   },
   {
