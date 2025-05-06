@@ -10,7 +10,7 @@
             "template": {
               "name": "Aeroplan Point Cards",
               "model": "aeroplan-point-cards",
-              "filters": "aeroplan-point-cards",
+              "filter": "aeroplan-point-cards",
               "titleType": "h2",
               "title": "Earn Aeroplan points easily"
             }
