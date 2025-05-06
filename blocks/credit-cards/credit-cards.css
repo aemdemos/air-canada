@@ -20,7 +20,20 @@
       flex-direction: column-reverse;
       align-items: flex-start;
       padding: 5px 30px;
+      border: none;
       background-color: #fff;
+
+      a {
+        font-size: 16px;
+      }
+
+      &.active {
+        background-color: #f1f1f1;
+
+        a {
+          color: #c0c5c8 !important;
+        }
+      }
 
       .title {
         margin: 0px;
@@ -29,16 +42,13 @@
         color: grey;
         text-transform: uppercase;
         font-size: 13px;
-
-        br {
-          display: none;
-        }
+        text-align: left;
       }
     }
   }
 
   /* show the card-wrapper when the drop down is open */
-  .mobile-cc-container:has(> .rotate)+.cards-wrapper {
+  .mobile-cc-container:has(> .closed)+.cards-wrapper {
     display: none;
   }
 }
@@ -132,9 +142,13 @@
 
 /* for width less than 1024px */
 @media (max-width: 1024px) {
-  .credit-cards .mobile-cc-container {
-    display: block;
+
+  .credit-cards .cc-nav {
     box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.15);
+  }
+
+  .credit-cards .cc-nav .mobile-cc-container {
+    display: block;
     background-color: #ffffff;
     padding: 40px 40px 20px 30px;
     text-align: left;
@@ -168,9 +182,10 @@
     break-inside: avoid;
     float: right;
     transition: transform 0.3s ease-in-out;
+    transform: rotate(180deg);
 
-    &.rotate {
-      transform: rotate(180deg);
+    &.closed {
+      transform: rotate(0deg);
     }
   }
 

@@ -4,20 +4,26 @@ export default function decorate(block) {
   const h1 = block.querySelector('h1');
   block.firstElementChild.remove();
 
+  const ccNav = document.createElement('div');
+  ccNav.classList.add('cc-nav');
+
   /* Mobile Container */
   const mobileContainer = document.createElement('div');
+  ccNav.append(mobileContainer);
+
   mobileContainer.classList.add('mobile-cc-container');
   mobileContainer.innerHTML = `
     <span class="dropdown-label">Select a card</span>
     <span class="mobile-content">TD® Aeroplan® Visa Infinite* Card</span>
-    <span class="dropdown-arrow"></span>
+    <span class="dropdown-arrow closed"></span>
   `;
 
   mobileContainer.addEventListener('click', () => {
-    mobileContainer.querySelector('.dropdown-arrow').classList.toggle('rotate');
+    mobileContainer.querySelector('.dropdown-arrow').classList.toggle('closed');
   });
 
   const cardsWrapper = document.createElement('ul');
+  ccNav.append(cardsWrapper);
   cardsWrapper.classList.add('cards-wrapper');
 
   // Convert divs to list items and add appropriate classes
@@ -39,6 +45,9 @@ export default function decorate(block) {
         bubbles: true
       });
       li.dispatchEvent(event);
+
+      // close the dropdown
+      mobileContainer.querySelector('.dropdown-arrow').classList.add('closed');
     });
 
     // Add classes to children
@@ -67,5 +76,5 @@ export default function decorate(block) {
   window.addEventListener('resize', updateView);
 
   block.innerHTML = '';
-  block.append(h1, mobileContainer, cardsWrapper);
+  block.append(h1, ccNav);
 }
