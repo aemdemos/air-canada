@@ -19,6 +19,8 @@
   --link-color: #3b63fb;
   --link-hover-color: #1d3ecf;
 
+  --nav-height: 80px;
+
   /* fonts */
   --body-font-family: 'Open Sans', Arial;
   --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
