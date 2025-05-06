@@ -28,8 +28,7 @@
         },
         {
           "component": "richtext",
-          "valueType": "string",
-          "name": "banner",
+          "name": "text",
           "label": "Text"
         }
       ]
