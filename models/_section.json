@@ -54,7 +54,8 @@
         "locator",
         "banner",
         "cards-toggle",
-        "offer-banner"
+        "offer-banner",
+        "fi-banner"
       ]
     }
   ]

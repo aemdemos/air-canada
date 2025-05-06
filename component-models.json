@@ -286,6 +286,37 @@
     ]
   },
   {
+    "id": "fi-banner",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image"
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "label": "Text"
+      },
+      {
+        "component": "richtext",
+        "name": "conditions",
+        "label": "Text"
+      },
+      {
+        "component": "text",
+        "name": "cta",
+        "label": "Link"
+      },
+      {
+        "component": "text",
+        "name": "ctaText",
+        "label": "Link"
+      }
+    ]
+  },
+  {
     "id": "fragment",
     "fields": [
       {
