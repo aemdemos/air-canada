@@ -1,18 +1,35 @@
-.offer {
+.offer-banner {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #f2f2f2;
-  padding: 25px 30px;
+  padding: 24px 30px;
   margin: 30px 0px 0px 0px;
 }
 
-/* create a single row for the new offer that spance 50% of the width */
-.offer .new-offer {
-  flex: 1;
+.offer-banner .offer-banner-row {
+  display: flex;
+  align-items: center;
+  font: normal 400 14px Open Sans;
 }
 
-/* create a single row for the old offer that spance 50% of the width */
-.offer .old-offer {
-  flex: 1;
+.offer-banner .icon {
+  top: 5px;
+  position: relative;
+}
+
+.offer-banner p {
+  margin: 0;
+
+  &:not(:last-of-type) {
+    padding-right: 10px;
+  }
+}
+
+.offer-banner a {
+  background: transparent;
+  color: #005078;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.875rem;
 }
