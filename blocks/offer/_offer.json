@@ -22,15 +22,13 @@
       "fields": [
         {
           "component": "richtext",
-          "valueType": "string",
           "name": "offers",
           "label": "Offers"
         },
         {
           "component": "richtext",
           "name": "oldoffer",
-          "label": "Old Offer",
-          "valueType": "string"
+          "label": "Old Offer"
         }
       ]
     }
