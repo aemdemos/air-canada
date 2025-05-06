@@ -154,6 +154,21 @@
         "name": "titleType",
         "label": "Title Type",
         "hidden": true
+      },
+      {
+        "component": "reference",
+        "name": "cardimage",
+        "label": "Image"
+      },
+      {
+        "component": "richtext",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "name": "details",
+        "label": "Details"
       }
     ]
   },

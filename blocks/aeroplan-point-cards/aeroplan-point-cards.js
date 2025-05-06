@@ -32,8 +32,6 @@ export default function decorate(block) {
     ul.append(li);
   });
 
-
-
   // optimize images
   ul.querySelectorAll('picture > img').forEach((img) => {
     const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
@@ -41,7 +39,10 @@ export default function decorate(block) {
     img.closest('picture').replaceWith(optimizedPic);
   });
 
+  const footer = document.createElement('div');
+
   block.textContent = '';
   block.append(title);
   block.append(ul);
+  block.append(footer);
 }
