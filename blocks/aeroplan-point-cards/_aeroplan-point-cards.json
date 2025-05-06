@@ -55,6 +55,11 @@
       "id": "aeroplan-point-card",
       "fields": [
         {
+          "component": "reference",
+          "name": "image",
+          "label": "Image"
+        },
+        {
           "component": "richtext",
           "name": "title",
           "label": "Title"
