@@ -50,11 +50,11 @@
         "heros",
         "cards",
         "columns",
+        "offer",
         "fragment",
         "locator",
         "banner",
-        "cards-toggle",
-        "offer"
+        "cards-toggle"
       ]
     }
   ]
