@@ -8,6 +8,21 @@ header {
   height: var(--header-nav-height);
 }
 
+/* if less than 900px, set the nav height to 60px */
+@media (width < 900px) {
+  :root {
+    --nav-height: 60px;
+    --header-nav-height: 60px;
+  }
+}
+
+/* if less than 768px then hide the brand */
+@media (width < 768px) {
+  :root {
+    --header-nav-brand-width: 0;
+  }
+}
+
 /* header and nav layout */
 header .nav-wrapper {
   background-color: var(--background-color);
@@ -29,6 +44,7 @@ header nav {
   width: 100%;
   box-sizing: border-box;
   display: grid;
+  place-items: center;
   grid-template:
     'hamburger brand tools' var(--nav-height) 'sections sections sections' 1fr / auto 1fr auto;
   align-items: center;
@@ -155,6 +171,7 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
 
 /* brand */
 header .nav-brand {
+  width: var(--header-nav-brand-width);
   grid-area: brand;
   flex-basis: var(--header-nav-brand-width);
   font-size: var(--heading-font-size-s);
