@@ -1,15 +1,15 @@
 {
   "definitions": [
     {
-      "title": "Offer",
-      "id": "offer",
+      "title": "Offer Banner",
+      "id": "offer-banner",
       "plugins": {
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/block/v1/block",
             "template": {
-              "name": "Offer",
-              "model": "offer"
+              "name": "Offer Banner",
+              "model": "offer-banner"
             }
           }
         }
@@ -18,7 +18,7 @@
   ],
   "models": [
     {
-      "id": "offer",
+      "id": "offer-banner",
       "fields": [
         {
           "component": "richtext",

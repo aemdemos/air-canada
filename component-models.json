@@ -328,7 +328,7 @@
     ]
   },
   {
-    "id": "offer",
+    "id": "offer-banner",
     "fields": [
       {
         "component": "richtext",
