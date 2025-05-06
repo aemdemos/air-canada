@@ -52,6 +52,7 @@
         "columns",
         "fragment",
         "locator",
+        "banner",
         "cards-toggle",
         "offer"
       ]
