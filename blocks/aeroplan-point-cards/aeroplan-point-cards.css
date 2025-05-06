@@ -20,7 +20,6 @@
   box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
   overflow: hidden;
   transition: transform 0.5s;
-  -webkit-transition: transform 0.5s;
 }
 
 .aeroplan-point-cards .cards-card-content {
@@ -41,6 +40,17 @@
   opacity: 0.91;
 }
 
+.aeroplan-point-cards .cards-card-title::after {
+  content: '';
+  width: 20px;
+  height: 1px;
+  border: solid 2px #b8a890;
+  background-color: #b8a890;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  display: block;
+}
+
 .aeroplan-point-cards .cards-card-title h2 {
   text-align: left !important;
   font-size: 18px;
@@ -50,6 +60,15 @@
   line-height: 1.33;
   letter-spacing: normal;
   color: #000 !important;
+}
+
+.aeroplan-point-cards .cards-card-body {
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.79;
+  letter-spacing: normal;
 }
 
 .aeroplan-point-cards .cards-card-points {
@@ -68,4 +87,10 @@
   border-radius: 50%;
   z-index: 1;
   font-weight: bold;
+  font-size: 0.875rem;
+
+  p {
+    padding: 0;
+    margin: 0;
+  }
 }
