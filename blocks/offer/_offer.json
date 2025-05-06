@@ -22,8 +22,8 @@
       "fields": [
         {
           "component": "richtext",
-          "name": "offers",
-          "label": "Offers"
+          "name": "offer",
+          "label": "Offer"
         },
         {
           "component": "richtext",
