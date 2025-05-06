@@ -1,0 +1,71 @@
+.aeroplan-point-cards-wrapper {
+  padding: 0;
+}
+
+.aeroplan-point-cards>ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
+  grid-gap: 24px;
+}
+
+.aeroplan-point-cards>ul>li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  width: 100%;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  transition: transform 0.5s;
+  -webkit-transition: transform 0.5s;
+}
+
+.aeroplan-point-cards .cards-card-content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  margin: 25px 14px 0 20px;
+  padding: 1rem;
+  line-height: 1.5em;
+}
+
+.aeroplan-point-cards .cards-card-image {
+  height: 180px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.91;
+}
+
+.aeroplan-point-cards .cards-card-title h2 {
+  text-align: left !important;
+  font-size: 18px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  color: #000 !important;
+}
+
+.aeroplan-point-cards .cards-card-points {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 4%;
+  top: 33%;
+  color: #fff !important;
+  width: 70px;
+  height: 70px;
+  text-align: center;
+  box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
+  background-color: #d8292f;
+  border-radius: 50%;
+  z-index: 1;
+  font-weight: bold;
+}

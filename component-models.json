@@ -176,7 +176,7 @@
         "label": "Details"
       },
       {
-        "component": "text",
+        "component": "richtext",
         "name": "points",
         "label": "Point Value"
       }
