@@ -2,6 +2,19 @@
   padding: 0;
 }
 
+.aeroplan-point-cards>div>div>h2 {
+  position: relative;
+  margin-bottom: -12px;
+  color: rgb(0, 0, 0);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px -15px 19px 2px;
+  height: 150px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font: normal 600 28px Open Sans;
+}
+
 .aeroplan-point-cards>ul {
   list-style: none;
   margin: 0;
@@ -67,6 +80,10 @@
   font-style: normal;
   line-height: 1.79;
   letter-spacing: normal;
+
+  p {
+    margin-bottom: 25px;
+  }
 }
 
 .aeroplan-point-cards .cards-card-points {
