@@ -18,10 +18,10 @@ const banner = (main, document, params) => {
 
     // get the anchor tag from the banner and create a link tag
     const link = banner.querySelector('a');
-    const linkTag = document.createElement('a');
-    linkTag.href = link.href;
-    linkTag.textContent = link.textContent;
-    cells.push([linkTag]);
+    // const linkTag = document.createElement('a');
+    // linkTag.href = link.href;
+    // linkTag.textContent = link.textContent;
+    cells.push([link]);
 
     const block = WebImporter.DOMUtils.createTable(cells, document);
     banner.innerHTML = '';
