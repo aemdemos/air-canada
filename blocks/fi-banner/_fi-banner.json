@@ -34,7 +34,7 @@
         {
           "component": "richtext",
           "name": "conditions",
-          "label": "Text"
+          "label": "Conditions"
         },
         {
           "component": "text",
