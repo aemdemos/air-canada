@@ -52,14 +52,12 @@
 }
 
 .aeroplan-point-cards .cards-card-title h2 {
-  text-align: left !important;
+  font: normal 600 24px 'Open Sans';
   font-size: 18px;
   font-weight: 600;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.33;
-  letter-spacing: normal;
-  color: #000 !important;
 }
 
 .aeroplan-point-cards .cards-card-body {
