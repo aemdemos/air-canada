@@ -142,6 +142,42 @@
     ]
   },
   {
+    "id": "aeroplan-point-cards",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "text",
+        "name": "titleType",
+        "label": "Title Type",
+        "hidden": true
+      }
+    ]
+  },
+  {
+    "id": "aeroplan-point-card",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "name": "details",
+        "label": "Details"
+      },
+      {
+        "component": "text",
+        "name": "points",
+        "label": "Point Value"
+      }
+    ]
+  },
+  {
     "id": "banner",
     "fields": [
       {
