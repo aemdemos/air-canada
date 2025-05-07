@@ -22,7 +22,8 @@
       "offer-banner",
       "fi-banner",
       "aeroplan-point-cards",
-      "benefit-cards"
+      "benefit-cards",
+      "two-cols"
     ]
   },
   {
@@ -67,8 +68,7 @@
       "text",
       "image",
       "button",
-      "title",
-      "icon-list-item"
+      "title"
     ]
   },
   {
@@ -81,6 +81,12 @@
     "id": "heros",
     "components": [
       "hero"
+    ]
+  },
+  {
+    "id": "two-cols-item",
+    "components": [
+      "two-cols-item"
     ]
   }
 ]

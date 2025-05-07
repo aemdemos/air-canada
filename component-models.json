@@ -463,22 +463,6 @@
     ]
   },
   {
-    "id": "icon-list-item",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image"
-      },
-      {
-        "component": "richtext",
-        "name": "text",
-        "label": "Text"
-      }
-    ]
-  },
-  {
     "id": "offer-banner",
     "fields": [
       {
@@ -490,6 +474,33 @@
         "component": "richtext",
         "name": "oldoffer",
         "label": "Old Offer"
+      }
+    ]
+  },
+  {
+    "id": "two-cols",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      }
+    ]
+  },
+  {
+    "id": "two-cols-item",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "label": "Text"
       }
     ]
   }

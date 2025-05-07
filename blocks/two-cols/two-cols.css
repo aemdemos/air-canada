@@ -1,14 +1,14 @@
-.icon-list-item {
+.two-cols {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
-.icon-list-item img {
+.two-cols .two-cols-item img {
   width: 2rem;
   height: 2rem;
 }
 
-.icon-list-item p {
+.two-cols .two-cols-item p {
   margin: 0;
 }
