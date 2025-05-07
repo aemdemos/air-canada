@@ -301,6 +301,35 @@
     ]
   },
   {
+    "id": "card-eligibility",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "title",
+        "label": "title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "details",
+        "label": "Details"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "cta",
+        "label": "CTA"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "ctaText",
+        "label": "CTA Text"
+      }
+    ]
+  },
+  {
     "id": "card-toggle-item",
     "fields": [
       {

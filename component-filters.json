@@ -48,7 +48,8 @@
   {
     "id": "card-details",
     "components": [
-      "card-detail"
+      "card-detail",
+      "card-eligibility"
     ]
   },
   {
