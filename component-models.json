@@ -157,18 +157,18 @@
       },
       {
         "component": "reference",
-        "name": "cardimage",
-        "label": "Image"
+        "name": "footerRightImage",
+        "label": "Footer Right Image"
       },
       {
         "component": "richtext",
-        "name": "title",
-        "label": "Title"
+        "name": "footerTitle",
+        "label": "Footer Title"
       },
       {
         "component": "richtext",
-        "name": "details",
-        "label": "Details"
+        "name": "footerDetails",
+        "label": "Footer Details"
       }
     ]
   },

@@ -5,9 +5,9 @@ export default function decorate(block) {
   /* change to ul, li */
   const ul = document.createElement('ul');
 
-  const title = block.children[0];
-  const [, ...children] = block.children;
-  children.forEach((row) => {
+  const [blockTitle, blockImage, blockDescription, ...cards] = block.children;
+
+  cards.forEach((row) => {
     const li = document.createElement('li');
     moveInstrumentation(row, li);
 
@@ -40,9 +40,12 @@ export default function decorate(block) {
   });
 
   const footer = document.createElement('div');
+  footer.className = 'cards-card-footer';
+  footer.append(blockImage);
+  footer.append(blockDescription);
 
   block.textContent = '';
-  block.append(title);
+  block.append(blockTitle);
   block.append(ul);
   block.append(footer);
 }
