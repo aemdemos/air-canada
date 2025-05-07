@@ -63,7 +63,7 @@
   ],
   "filters": [
     {
-      "id": "two-cols-item",
+      "id": "two-cols",
       "components": [
         "two-cols-item"
       ]
