@@ -506,7 +506,7 @@
     ]
   },
   {
-    "id": "two-cols",
+    "id": "two-columns",
     "fields": [
       {
         "component": "richtext",
@@ -517,7 +517,7 @@
     ]
   },
   {
-    "id": "two-cols-item",
+    "id": "two-columns-item",
     "fields": [
       {
         "component": "reference",

@@ -91,9 +91,9 @@
     ]
   },
   {
-    "id": "two-cols",
+    "id": "two-columns",
     "components": [
-      "two-cols-item"
+      "two-columns-item"
     ]
   }
 ]
