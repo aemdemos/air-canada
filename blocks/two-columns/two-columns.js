@@ -1,7 +1,6 @@
 export default function decorate(block) {
   const [title, ...cards] = block.children;
 
-  // create a div that will be the container for the cards
   const container = document.createElement('ul');
   container.classList.add('two-columns-container');
 
