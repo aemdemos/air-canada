@@ -23,7 +23,8 @@
       "fi-banner",
       "aeroplan-point-cards",
       "benefit-cards",
-      "two-cols"
+      "two-cols",
+      "card-details"
     ]
   },
   {
@@ -42,6 +43,12 @@
     "id": "breadcrumbs",
     "components": [
       "breadcrumb-items"
+    ]
+  },
+  {
+    "id": "card-details",
+    "components": [
+      "card-detail"
     ]
   },
   {

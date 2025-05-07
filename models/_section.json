@@ -58,7 +58,8 @@
         "fi-banner",
         "aeroplan-point-cards",
         "benefit-cards",
-        "two-cols"
+        "two-cols",
+        "card-details"
       ]
     }
   ]
