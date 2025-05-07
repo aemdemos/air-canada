@@ -36,7 +36,7 @@
       "id": "accordion-item",
       "fields": [
         {
-          "component": "text",
+          "component": "richtext",
           "valueType": "string",
           "name": "summary",
           "value": "",
