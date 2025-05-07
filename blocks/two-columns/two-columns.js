@@ -1,3 +1,5 @@
+import { moveInstrumentation } from '../../scripts/scripts.js';
+
 export default function decorate(block) {
   const [title, ...cards] = block.children;
 
@@ -6,6 +8,8 @@ export default function decorate(block) {
 
   cards.forEach((card) => {
     const li = document.createElement('li');
+    moveInstrumentation(card, li);
+
     li.classList.add('two-columns-item');
     li.append(...card.children);
     container.append(li);
