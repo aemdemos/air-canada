@@ -38,9 +38,9 @@
       "id": "benefit-cards",
       "fields": [
         {
-          "component": "text",
+          "component": "richtext",
           "name": "title",
-          "label": "title",
+          "label": "Title",
           "valueType": "string"
         },
         {
