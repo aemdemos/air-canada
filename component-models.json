@@ -233,6 +233,12 @@
         "name": "cta",
         "label": "CTA",
         "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "ctaText",
+        "label": "CTA Text",
+        "valueType": "string"
       }
     ]
   },

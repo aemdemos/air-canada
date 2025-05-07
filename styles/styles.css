@@ -108,23 +108,33 @@ h6 {
 }
 
 h1 {
-  font-size: var(--heading-font-size-xxl);
+  font: normal 300 36px Open Sans;
+  background: transparent;
+  color: #000;
 }
 
 h2 {
-  font-size: var(--heading-font-size-xl);
+  font: normal 600 28px Open Sans;
+  background: transparent;
+  color: #000;
 }
 
 h3 {
-  font-size: var(--heading-font-size-l);
+  font: normal 600 20px Open Sans;
+  background: transparent;
+  color: #000;
 }
 
 h4 {
-  font-size: var(--heading-font-size-m);
+  font: normal 300 18px Open Sans;
+  background: transparent;
+  color: #000;
 }
 
 h5 {
-  font-size: var(--heading-font-size-s);
+  font: normal 400 16px Open Sans;
+  background: transparent;
+  color: #000;
 }
 
 h6 {
