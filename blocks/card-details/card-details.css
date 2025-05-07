@@ -9,6 +9,9 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  padding-bottom: 30px;
+  width: 100%;
+  border-bottom: solid 1px #c8c8c8;
 }
 
 .card-details .card-detail {
@@ -37,4 +40,43 @@
   top: calc(50% - 20px);
   position: absolute;
   right: 0;
+}
+
+.card-details .card-eligibility {
+  margin-top: 30px;
+  display: flex;
+  text-align: left;
+  padding-bottom: 30px;
+  width: 100%;
+}
+
+.card-details .card-eligibility>div:first-child {
+  flex-basis: 25%
+}
+
+/* make the second cell of the card-eligibility take up as much width as possible */
+.card-details .card-eligibility>div:nth-child(2) {
+  flex-basis: 50%;
+  font-size: 14px;
+}
+
+/* align the last cell of the card-eligibility to the right */
+.card-details .card-eligibility>div:last-child {
+  text-align: right;
+  flex-basis: 25%;
+
+  a {
+    border-radius: 0;
+    color: #fff !important;
+    background: #005078 !important;
+    display: table;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.25px;
+    padding: 15px;
+    margin: 10px auto;
+    border: none;
+    color: #fff !important;
+    font-weight: 600;
+  }
 }
