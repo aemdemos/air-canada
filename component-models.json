@@ -273,6 +273,17 @@
     ]
   },
   {
+    "id": "card-details",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      }
+    ]
+  },
+  {
     "id": "card-detail",
     "fields": [
       {
