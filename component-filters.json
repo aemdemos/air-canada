@@ -24,7 +24,14 @@
       "aeroplan-point-cards",
       "benefit-cards",
       "two-columns",
-      "card-details"
+      "card-details",
+      "accordion"
+    ]
+  },
+  {
+    "id": "accordion",
+    "components": [
+      "accordion-item"
     ]
   },
   {
