@@ -492,10 +492,10 @@
     "id": "two-cols-item",
     "fields": [
       {
-        "component": "richtext",
+        "component": "reference",
         "valueType": "string",
-        "name": "title",
-        "label": "Title"
+        "name": "icon",
+        "label": "Icon"
       },
       {
         "component": "richtext",
