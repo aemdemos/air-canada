@@ -5,7 +5,7 @@ export default function decorate(block) {
   /* change to ul, li */
   const ul = document.createElement('ul');
 
-  const [blockTitle, blockImage, blockDescription, ...cards] = block.children;
+  const [blockTitle, blockImage, footerTitle, footerDetails, ...cards] = block.children;
 
   cards.forEach((row) => {
     const li = document.createElement('li');
@@ -42,7 +42,12 @@ export default function decorate(block) {
   const footer = document.createElement('div');
   footer.className = 'cards-card-footer';
   footer.append(blockImage);
-  footer.append(blockDescription);
+
+  const footerContainer = document.createElement('div');
+  footerContainer.className = 'cards-card-footer-container';
+  footerContainer.append(footerTitle);
+  footerContainer.append(footerDetails);
+  footer.append(footerContainer);
 
   block.textContent = '';
   block.append(blockTitle);
