@@ -463,6 +463,22 @@
     ]
   },
   {
+    "id": "icon-list-item",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image"
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "label": "Text"
+      }
+    ]
+  },
+  {
     "id": "offer-banner",
     "fields": [
       {

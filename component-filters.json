@@ -67,7 +67,8 @@
       "text",
       "image",
       "button",
-      "title"
+      "title",
+      "icon-list-item"
     ]
   },
   {
