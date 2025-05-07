@@ -224,6 +224,21 @@
           }
         },
         {
+          "title": "Card Eligibility",
+          "id": "card-eligibility",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Card Eligibility",
+                  "model": "card-eligibility"
+                }
+              }
+            }
+          }
+        },
+        {
           "title": "Cards Toggle",
           "id": "cards-toggle",
           "plugins": {
