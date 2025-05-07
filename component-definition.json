@@ -388,6 +388,21 @@
               }
             }
           }
+        },
+        {
+          "title": "Two Columns Item",
+          "id": "two-cols-item",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Two Columns Item",
+                  "model": "two-cols-item"
+                }
+              }
+            }
+          }
         }
       ]
     }
