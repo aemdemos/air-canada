@@ -214,6 +214,48 @@
     ]
   },
   {
+    "id": "benefit-cards",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "label": "title",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "titleType",
+        "label": "titleType",
+        "hidden": true
+      },
+      {
+        "component": "text",
+        "name": "cta",
+        "label": "CTA",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "benefit-card",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "breadcrumb-items",
     "fields": [
       {

@@ -31,6 +31,12 @@
     ]
   },
   {
+    "id": "benefit-cards",
+    "components": [
+      "benefit-card"
+    ]
+  },
+  {
     "id": "breadcrumbs",
     "components": [
       "breadcrumb-items"

@@ -131,6 +131,38 @@
           }
         },
         {
+          "title": "Benefit Cards",
+          "id": "benefit-cards",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Benefit Cards",
+                  "filter": "benefit-cards",
+                  "model": "benefit-cards",
+                  "titleType": "h2"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Benefit Card",
+          "id": "benefit-card",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Benefit Card",
+                  "model": "benefit-card"
+                }
+              }
+            }
+          }
+        },
+        {
           "title": "Breadcrumbs",
           "id": "breadcrumbs",
           "plugins": {
