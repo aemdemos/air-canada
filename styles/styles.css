@@ -288,3 +288,37 @@ main .section.highlight {
   margin: 0;
   padding: 40px 0;
 }
+
+.socials {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+
+.social-button {
+  .icon {
+    display: inline-block;
+    font-size: 1.8em;
+    box-sizing: border-box;
+    position: relative;
+    display: inline-block;
+    font-family: 'AC Icomoon';
+  }
+
+  .icon-facebook::before {
+    content: "\e94a";
+  }
+
+  .icon-twitter::before {
+    content: "\e948";
+  }
+
+  .icon-youtube::before {
+    content: "\e94b";
+  }
+
+  .icon-newfeed::before {
+    content: "\e949";
+  }
+}

@@ -7,36 +7,49 @@ footer {
 footer .footer-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  flex-direction: row;
-  gap: 15px;
-  justify-content: space-between;
-}
 
-footer .footer>div {
-  margin: auto;
+  flex-direction: row;
+  justify-content: space-between;
   max-width: 1200px;
   padding: 40px 24px 24px;
+  margin: auto;
 }
 
 /* add a border to the bottom of the first row */
 footer .footer-container .nav-col p {
+  text-transform: uppercase;
   border-bottom: 1px solid hsl(0, 0%, 45%);
   width: 100%;
 }
 
 footer .footer-container .nav-col p {
-  grid-column: 1 / -1;
+  grid-area: a;
 }
 
 /* last nav-col */
-footer .footer-container div:last-child {
+footer .footer-container div:last-child:not(.socials) {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   grid-template-areas:
     "a b"
     "c d";
-  grid-template-rows: 50px 1fr;
+  grid-template-rows: 30px 1fr;
+}
+
+footer .footer-container .socials {
+  color: #FFFFFF;
+  margin: 0 0 5px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: inherit;
+  height: 30px;
+  border-bottom: 1px solid hsl(0, 0%, 45%);
+  grid-area: b;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 
 footer .footer-container div:last-child ul:nth-of-type(1) {
@@ -46,8 +59,6 @@ footer .footer-container div:last-child ul:nth-of-type(1) {
 footer .footer-container div:last-child ul:nth-of-type(2) {
   grid-area: d;
 }
-
-
 
 footer .footer ul {
   padding-left: 0;
@@ -59,13 +70,12 @@ footer .footer ul li {
 }
 
 footer .footer p {
-  text-transform: uppercase;
   color: #FFFFFF;
   margin: 0 0 5px;
   font-size: 14px;
   font-weight: 600;
   line-height: inherit;
-  height: 45px;
+  height: 30px;
 }
 
 footer .footer a {
@@ -75,8 +85,159 @@ footer .footer a {
   font-weight: 300;
 }
 
+.footer .footer-brand-container {
+  background: #000000;
+}
+
+.footer .footer-brand {
+  padding: 10px;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.footer .footer-brand .left {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: space-around;
+
+  img {
+    padding-right: 02px;
+  }
+
+  p {
+    max-width: 200px;
+    border-left: 1px solid #fff;
+    padding-left: 12px;
+    text-transform: none;
+    font-size: 12px;
+    font-weight: 300;
+    height: auto;
+  }
+}
+
+.footer .footer-brand .right {
+  img {
+    height: 25px;
+    width: 245px;
+    display: block;
+    position: relative;
+    top: -3px;
+  }
+}
+
+.footer .terms {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+
+  a {
+    all: unset;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 300;
+  }
+
+  a:not(:last-child)::after {
+    content: "|";
+    margin-left: 10px;
+  }
+}
+
+.footer .copyright {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+
+  .terms-right {
+    padding-left: 12px;
+
+    p {
+      font-size: 12px;
+    }
+  }
+
+  .terms-left {
+    padding-right: 12px;
+
+    p {
+      font-weight: normal;
+      font-size: 12px;
+      color: #BAA88D;
+
+      &:before {
+        content: "\e94c";
+        margin-right: 3px;
+        font-family: 'AC Icomoon';
+        font-size: 12px;
+      }
+    }
+  }
+}
+
 @media (width >=900px) {
   footer .footer>div {
     padding: 40px 32px 24px;
+  }
+}
+
+/*
+when the screen is less than 1200px the  grid layout should change so that
+the last column takes 50% of the width and the first two columns take 25% each
+*/
+@media (width < 1200px) {
+  footer .footer-container {
+    grid-template-columns: 25% 25% 50%;
+  }
+
+  footer .footer-brand {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+/* at 768 the grid layout should change to two columns */
+@media (width < 768px) {
+  footer {
+    background: #000000 !important;
+  }
+
+  footer .footer-brand-container .footer-brand {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  footer .footer-brand-container .copyright {
+    flex-direction: column;
+  }
+
+  footer .footer-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* hide the last coluns's second ul */
+  footer .footer-container div:last-child ul:nth-of-type(2) {
+    display: none;
+  }
+
+  /* hide the socials */
+  footer .footer-container .socials .icon {
+    display: none;
+  }
+
+  footer .footer-brand .right {
+    display: none;
   }
 }
