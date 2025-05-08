@@ -36,3 +36,19 @@
   font-weight: 300;
   font-size: 14px;
 }
+
+@media (width < 1024px) {
+  .two-columns {
+    padding: 0px 4em 0em;
+  }
+}
+
+@media (width < 768px) {
+  .two-columns {
+    padding: 0px 2em 0em;
+  }
+
+  .two-columns .two-columns-container {
+    grid-template-columns: 1fr;
+  }
+}
