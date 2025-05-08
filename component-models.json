@@ -81,6 +81,16 @@
     ]
   },
   {
+    "title": "Text",
+    "id": "text",
+    "fields": [
+      {
+        "title": "Text",
+        "id": "text"
+      }
+    ]
+  },
+  {
     "id": "button",
     "fields": [
       {
