@@ -14,6 +14,12 @@ export default function decorate(block) {
     // decorate accordion item
     const details = document.createElement('details');
 
+    body.querySelectorAll('a').forEach((a) => {
+      if (a.href.indexOf('aircanada.com') === -1) {
+        a.classList.add('external-link');
+      }
+    });
+
     details.className = 'accordion-item';
     details.append(summary, body);
 

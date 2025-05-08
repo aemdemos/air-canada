@@ -67,3 +67,16 @@
   border-top: 1px solid #dadada;
   background-color: var(--background-color);
 }
+
+.external-link::after {
+  content: '';
+  background-image: url('../../icons/open-external.svg');
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
+  color: #005078;
+  display: inline-block;
+  top: 2px;
+  position: relative;
+  margin: 0 5px;
+}
