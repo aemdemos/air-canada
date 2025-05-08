@@ -10,6 +10,7 @@ import {
 } from './aem.js';
 import { decorateRichtext } from './editor-support-rte.js';
 import { decorateMain } from './scripts.js';
+import { listenForCardSelection, decorateHeros } from './editor-support-personal.js';
 
 async function applyChanges(event) {
   // redecorate default content and blocks on patches (in the properties rail)
@@ -57,6 +58,7 @@ async function applyChanges(event) {
         decorateIcons(newBlock);
         decorateBlock(newBlock);
         decorateRichtext(newBlock);
+        decorateHeros(newBlock);
         await loadBlock(newBlock);
         block.remove();
         newBlock.style.display = null;
@@ -109,3 +111,4 @@ function attachEventListners(main) {
 }
 
 attachEventListners(document.querySelector('main'));
+listenForCardSelection();
