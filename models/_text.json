@@ -22,7 +22,7 @@
       "fields": [
         {
           "component": "text",
-          "title": "Text",
+          "label": "Text",
           "name": "text",
           "valueType": "string"
         }
