@@ -85,8 +85,9 @@
     "fields": [
       {
         "component": "text",
-        "label": "Text",
         "name": "text",
+        "value": "",
+        "label": "Text",
         "valueType": "string"
       }
     ]
