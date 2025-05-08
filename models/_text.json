@@ -23,7 +23,7 @@
         {
           "component": "text",
           "title": "Text",
-          "id": "text",
+          "name": "text",
           "valueType": "string"
         }
       ]
