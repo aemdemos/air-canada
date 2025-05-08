@@ -18,12 +18,13 @@
   ],
   "models": [
     {
-      "title": "Text",
       "id": "text",
       "fields": [
         {
+          "component": "text",
           "title": "Text",
-          "id": "text"
+          "id": "text",
+          "valueType": "string"
         }
       ]
     }
