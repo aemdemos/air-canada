@@ -13,8 +13,32 @@ export default async function decorate(block) {
 
   // decorate footer DOM
   block.textContent = '';
-  const footer = document.createElement('div');
-  while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
 
+  const footer = document.createElement('div');
+  footer.classList.add('footer-container');
+
+  // go through the children of the footer and find the '.default-content-wrapper'
+  const defaultContentWrapper = fragment.querySelector('.default-content-wrapper');
+
+  if (defaultContentWrapper) {
+    const pElements = defaultContentWrapper.querySelectorAll(':scope>p');
+    pElements.forEach(pElement => {
+      const navRowDiv = document.createElement('div');
+      navRowDiv.classList.add('nav-col');
+
+      let current = pElement.nextElementSibling;
+      const pChildren = [];
+      while (current && current.tagName !== 'P') {
+        pChildren.push(current);
+        current = current.nextElementSibling;
+      }
+
+      navRowDiv.append(pElement);
+      navRowDiv.append(...pChildren);
+      footer.append(navRowDiv);
+    });
+  }
+
+  block.textContent = '';
   block.append(footer);
 }

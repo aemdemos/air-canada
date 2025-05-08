@@ -10,7 +10,7 @@ import {
 } from './aem.js';
 import { decorateRichtext } from './editor-support-rte.js';
 import { decorateMain } from './scripts.js';
-import { listenForCardSelection, decorateHeros } from './editor-support-personal.js';
+import listenForCardSelection from './editor-support-personal.js';
 
 async function applyChanges(event) {
   // redecorate default content and blocks on patches (in the properties rail)
@@ -111,4 +111,4 @@ function attachEventListners(main) {
 }
 
 attachEventListners(document.querySelector('main'));
-listenForCardSelection();
+listenForCardSelection
