@@ -107,12 +107,6 @@
     ]
   },
   {
-    "id": "heros",
-    "components": [
-      "hero-x"
-    ]
-  },
-  {
     "id": "creditcardtabs",
     "components": [
       "creditcardtabitem"
