@@ -48,7 +48,7 @@ export default function decorate(block) {
     footer.className = 'cards-card-footer';
     footer.append(blockImage);
 
-    if (footerTitle.querySelector('p') && footerDetails.querySelector('p')) {
+    if (footerTitle && footerDetails) {
       const footerContainer = document.createElement('div');
       footerContainer.className = 'cards-card-footer-container';
       footerContainer.append(footerTitle);
