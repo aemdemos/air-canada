@@ -6,6 +6,7 @@
     "/content/dam.resource:/dam"
   ],
   "includes": [
-    "/content/ac/"
+    "/content/ac/",
+    "/content/dam/ac/"
   ]
 }
