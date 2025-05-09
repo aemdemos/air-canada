@@ -21,6 +21,7 @@
   {
     "id": "creditcardsection",
     "components": [
+      "tabs-creditcard",
       "text",
       "image",
       "button",
