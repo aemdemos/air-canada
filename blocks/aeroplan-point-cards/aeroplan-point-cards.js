@@ -30,6 +30,7 @@ export default function decorate(block) {
     container.append(li.querySelector('.cards-card-body'));
     li.append(container);
 
+    row.remove();
     ul.append(li);
   });
 

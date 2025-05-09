@@ -324,7 +324,7 @@ main .section.highlight {
 }
 
 .light-blue-bg {
-  background-image: linear-gradient(to top, #ddecf5, #fff) !important;
+  background-image: linear-gradient(to top, #ddecf5, #fff);
 }
 
 .blue-bg-clouds {
@@ -335,19 +335,4 @@ main .section.highlight {
 
 .pink-bg {
   background: #f6f4f0;
-}
-
-.image-below {
-  width: 1440px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 20px 0px;
-}
-
-.gifts {
-  background-image: url(../icons/td-gifts-2-estore-en.png);
-  background-repeat: no-repeat;
-  background-position: bottom 0px right 0px;
-  background-size: 435px;
 }
