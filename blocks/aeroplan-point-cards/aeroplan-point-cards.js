@@ -2,10 +2,9 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
 import { safeAppend } from '../../scripts/block-helper.js';
 export default function decorate(block) {
-  /* change to ul, li */
   const ul = document.createElement('ul');
 
-  const [blockTitle, blockImage, footerTitle, footerDetails, ...cards] = block.children;
+  const [blockTitle, footerTitle, footerDetails, blockLeftImage, blockRightImage, ...cards] = block.children;
 
   cards.forEach((row) => {
     const li = document.createElement('li');
@@ -40,13 +39,14 @@ export default function decorate(block) {
   });
 
   let footer;
-  if (blockImage.querySelector('picture') ||
+  if (blockLeftImage.querySelector('picture') ||
     footerTitle.querySelector('p') ||
     footerDetails.querySelector('p')) {
 
     footer = document.createElement('div');
     footer.className = 'cards-card-footer';
-    footer.append(blockImage);
+    footer.append(blockLeftImage);
+    footer.append(blockRightImage);
 
     if (footerTitle && footerDetails) {
       const footerContainer = document.createElement('div');
