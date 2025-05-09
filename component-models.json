@@ -537,7 +537,7 @@
     ]
   },
   {
-    "id": "hero",
+    "id": "herocard",
     "fields": [
       {
         "component": "reference",
