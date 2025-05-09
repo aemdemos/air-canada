@@ -48,11 +48,13 @@ export default function decorate(block) {
     footer.className = 'cards-card-footer';
     footer.append(blockImage);
 
-    const footerContainer = document.createElement('div');
-    footerContainer.className = 'cards-card-footer-container';
-    footerContainer.append(footerTitle);
-    footerContainer.append(footerDetails);
-    footer.append(footerContainer);
+    if (footerTitle.querySelector('p') && footerDetails.querySelector('p')) {
+      const footerContainer = document.createElement('div');
+      footerContainer.className = 'cards-card-footer-container';
+      footerContainer.append(footerTitle);
+      footerContainer.append(footerDetails);
+      footer.append(footerContainer);
+    }
   }
 
   safeAppend(block, blockTitle, ul, footer);
