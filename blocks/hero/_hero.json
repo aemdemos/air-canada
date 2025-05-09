@@ -1,15 +1,15 @@
 {
   "definitions": [
     {
-      "title": "Hero Card",
-      "id": "herocard",
+      "title": "Hero",
+      "id": "hero",
       "plugins": {
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/block/v1/block",
             "template": {
-              "name": "Hero Card",
-              "model": "herocard"
+              "name": "Hero",
+              "model": "hero"
             }
           }
         }
@@ -18,7 +18,7 @@
   ],
   "models": [
     {
-      "id": "herocard",
+      "id": "hero",
       "fields": [
         {
           "component": "reference",
