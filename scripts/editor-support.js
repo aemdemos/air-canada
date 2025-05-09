@@ -4,7 +4,6 @@ import {
   decorateButtons,
   decorateIcons,
   decorateSections,
-  decorateHeros,
   loadBlock,
   loadScript,
   loadSections,
@@ -58,7 +57,6 @@ async function applyChanges(event) {
         decorateIcons(newBlock);
         decorateBlock(newBlock);
         decorateRichtext(newBlock);
-        decorateHeros(newBlock);
         await loadBlock(newBlock);
         block.remove();
         newBlock.style.display = null;
