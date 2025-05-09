@@ -24,7 +24,7 @@
             "template": {
               "name": "Credit Card Section",
               "model": "creditcardsection",
-              "filter": "creditcardSection"
+              "filter": "creditcardsection"
             }
           }
         }
