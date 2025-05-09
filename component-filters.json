@@ -12,6 +12,18 @@
       "image",
       "button",
       "title",
+      "cards",
+      "columns",
+      "fragment"
+    ]
+  },
+  {
+    "id": "creditcardsection",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title",
       "heros",
       "cards",
       "columns",
@@ -96,6 +108,12 @@
     "id": "heros",
     "components": [
       "hero"
+    ]
+  },
+  {
+    "id": "creditcardtabs",
+    "components": [
+      "creditcardtabitem"
     ]
   },
   {

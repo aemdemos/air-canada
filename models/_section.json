@@ -13,6 +13,20 @@
           }
         }
       }
+    },
+    {
+      "title": "Credit Card Section",
+      "id": "creditcardsection",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/section/v1/section",
+            "template": {
+              "model": "creditcardsection"
+            }
+          }
+        }
+      }
     }
   ],
   "models": [
@@ -37,11 +51,53 @@
           ]
         }
       ]
+    },
+    {
+      "id": "creditcardsection",
+      "fields": [
+        {
+          "component": "multiselect",
+          "name": "classes",
+          "value": "",
+          "label": "Section Style",
+          "valueType": "string",
+          "options": [
+            {
+              "name": "White",
+              "value": "white-bg"
+            },
+            {
+              "name": "LightBlue",
+              "value": "light-blue-bg"
+            },
+            {
+              "name": "Blue Cloud",
+              "value": "blue-bg-clouds"
+            },
+            {
+              "name": "Pink",
+              "value": "pink-bg"
+            }
+          ]
+        }
+      ]
     }
   ],
   "filters": [
     {
       "id": "section",
+      "components": [
+        "text",
+        "image",
+        "button",
+        "title",
+        "cards",
+        "columns",
+        "fragment"
+      ]
+    },
+    {
+      "id": "creditcardsection",
       "components": [
         "text",
         "image",

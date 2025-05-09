@@ -2,7 +2,7 @@
   margin-top: -140px !important;
   background: #fff;
   max-width: 1200px;
-  padding: 0px !important;
+  box-sizing: border-box;
   padding-top: 1em !important;
   box-shadow: 0 -6px 19px -7px rgb(0 0 0 / 20%);
   user-select: none;
@@ -69,8 +69,6 @@
   justify-content: center;
   flex-wrap: nowrap;
   list-style: none;
-  max-width: 100%;
-  background-color: lightblue;
 }
 
 .credit-cards .card {
@@ -82,6 +80,8 @@
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  max-width: 378px;
+  box-sizing: border-box;
 }
 
 .credit-cards .card.active {
@@ -118,7 +118,7 @@
 
 .credit-cards .banner {
   background: url(../../icons/td-aeroplan-rectangle-white.svg) no-repeat center center;
-  background-size: contain;
+  background-size: 100% auto;
   width: 340px;
   height: 60px;
   position: relative;
@@ -145,8 +145,8 @@
   }
 }
 
-/* for width less than 1024px */
-@media (max-width: 1024px) {
+/* when less than 1024px */
+@media (width < 1024px) {
 
   .credit-cards .cc-nav {
     box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.15);
