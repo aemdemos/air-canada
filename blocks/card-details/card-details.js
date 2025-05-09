@@ -1,4 +1,6 @@
 import { safeAppend } from '../../scripts/block-helper.js';
+import { moveInstrumentation } from '../../scripts/scripts.js';
+
 export default function decorate(block) {
   let [title, ...rest] = block.children;
   const container = document.createElement('div');
@@ -18,6 +20,7 @@ export default function decorate(block) {
     eligibility = document.createElement('div');
     eligibility.classList.add('card-eligibility');
     eligibility.append(...rest[0].children);
+    moveInstrumentation(rest[0], eligibility);
   }
 
   safeAppend(block, title, container, eligibility);
