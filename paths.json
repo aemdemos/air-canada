@@ -2,11 +2,9 @@
   "mappings": [
     "/content/ac/:/",
     "/content/ac/configuration:/.helix/config.json",
-    "/content/ac/metadata:/metadata.json",
-    "/content/dam.resource:/dam"
+    "/content/ac/metadata:/metadata.json"
   ],
   "includes": [
-    "/content/ac/",
-    "/content/dam/ac/"
+    "/content/ac/"
   ]
 }
