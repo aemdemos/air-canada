@@ -20,6 +20,5 @@ export default function decorate(block) {
     eligibility.append(...rest[0].children);
   }
 
-  block.innerHTML = '';
   safeAppend(block, title, container, eligibility);
 }
