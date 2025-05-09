@@ -79,6 +79,14 @@
             {
               "name": "Pink",
               "value": "pink-bg"
+            },
+            {
+              "name": "Image Below",
+              "value": "image-below"
+            },
+            {
+              "name": "Gifts",
+              "value": "gifts"
             }
           ]
         }
