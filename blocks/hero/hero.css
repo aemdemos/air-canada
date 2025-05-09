@@ -7,9 +7,46 @@
   position: relative;
   padding: 40px 24px;
   min-height: 300px;
+  height: 500px;
 }
 
 .hero h1 {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 700;
+  font-size: 45px;
+  color: #fff;
+  margin: 0 0 10px;
+}
+
+.hero h2 {
+  color: #fff !important;
+  font: normal 600 28px Open Sans;
+  background: transparent;
+  margin: 0 0 10px;
+}
+
+/* pill */
+.hero div:nth-of-type(2) p {
+  padding: 4px 20px;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  z-index: 9;
+  border-radius: 13px;
+  background-color: #f01428;
+  text-transform: uppercase;
+  font: 600 16px Open Sans !important;
+  color: #fff;
+  letter-spacing: .2px;
+  width: fit-content;
+  display: table;
+}
+
+.hero>div:nth-child(2),
+.hero>div:nth-child(3) {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
@@ -22,6 +59,17 @@
   inset: 0;
   object-fit: cover;
   box-sizing: border-box;
+
+  &::after {
+    content: '';
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgb(0 0 0 / 90%) 100%);
+    position: absolute;
+    height: 100%;
+    right: 0;
+    top: 0;
+    left: 0;
+    display: block;
+  }
 }
 
 .hero img {
@@ -33,5 +81,62 @@
 @media (width >=900px) {
   .hero {
     padding: 40px 32px;
+  }
+}
+
+.hero {
+  h1 {
+    font: normal 700 45px Open Sans;
+    background: transparent;
+  }
+
+  @media only screen and (max-width: 767px) {
+    h1 {
+      font: normal 700 30px Open Sans
+    }
+  }
+
+  h2 {
+    font: normal 600 28px Open Sans;
+    background: transparent;
+  }
+
+  @media only screen and (max-width: 767px) {
+    h2 {
+      font: normal 600 18px Open Sans;
+    }
+  }
+
+  h3 {
+    font: normal 600 20px Open Sans;
+    background: transparent;
+  }
+
+  @media only screen and (max-width: 767px) {
+    h3 {
+      font: normal 600 16px Open Sans;
+    }
+  }
+
+  h4 {
+    font: normal 300 18px Open Sans;
+    background: transparent;
+  }
+
+  @media only screen and (max-width: 767px) {
+    h4 {
+      font: normal normal 14px Open Sans;
+    }
+  }
+
+  h5 {
+    font: normal 400 16px Open Sans;
+    background: transparent;
+  }
+
+  @media only screen and (max-width: 767px) {
+    h5 {
+      font: normal 400 14px Open Sans;
+    }
   }
 }
