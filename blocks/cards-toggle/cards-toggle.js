@@ -36,11 +36,10 @@ export default function decorate(block) {
       e.target.closest('.tile').classList.toggle('toggled');
     });
 
-    child.innerHTML = ''; x
+    child.innerHTML = '';
     child.append(tileHeading, content, toggledContent, learnMore);
     cards.push(child);
   });
 
-  block.innerHTML = '';
   block.append(...cards);
 }
