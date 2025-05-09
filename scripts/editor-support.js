@@ -4,6 +4,7 @@ import {
   decorateButtons,
   decorateIcons,
   decorateSections,
+  decorateHeros,
   loadBlock,
   loadScript,
   loadSections,
