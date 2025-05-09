@@ -1,0 +1,8 @@
+.cards-template {
+
+  .section.breadcrumbs-container,
+  .section.hero-container {
+    padding: 0;
+    margin: 0;
+  }
+}
