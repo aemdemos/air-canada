@@ -22,7 +22,8 @@
           "page": {
             "resourceType": "core/franklin/components/section/v1/section",
             "template": {
-              "model": "creditcardsection"
+              "model": "creditcardsection",
+              "name": "Credit Card Section"
             }
           }
         }
