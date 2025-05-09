@@ -63,6 +63,11 @@
           "component": "richtext",
           "name": "footerDetails",
           "label": "Footer Details"
+        },
+        {
+          "component": "reference",
+          "name": "leftRightImage",
+          "label": "Footer Left Image"
         }
       ]
     },
