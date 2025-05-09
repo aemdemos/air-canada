@@ -102,6 +102,7 @@
       "id": "creditcardsection",
       "components": [
         "tabs-creditcard",
+        "breadcrumbs",
         "text",
         "image",
         "button",
