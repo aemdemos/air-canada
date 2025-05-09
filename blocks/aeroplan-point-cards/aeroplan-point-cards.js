@@ -1,6 +1,6 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
-
+import { safeAppend } from '../../scripts/block-helper.js';
 export default function decorate(block) {
   /* change to ul, li */
   const ul = document.createElement('ul');
@@ -39,18 +39,21 @@ export default function decorate(block) {
     img.closest('picture').replaceWith(optimizedPic);
   });
 
-  const footer = document.createElement('div');
-  footer.className = 'cards-card-footer';
-  footer.append(blockImage);
+  let footer;
+  if (blockImage.querySelector('picture') ||
+    footerTitle.querySelector('p') ||
+    footerDetails.querySelector('p')) {
 
-  const footerContainer = document.createElement('div');
-  footerContainer.className = 'cards-card-footer-container';
-  footerContainer.append(footerTitle);
-  footerContainer.append(footerDetails);
-  footer.append(footerContainer);
+    footer = document.createElement('div');
+    footer.className = 'cards-card-footer';
+    footer.append(blockImage);
 
-  block.textContent = '';
-  block.append(blockTitle);
-  block.append(ul);
-  block.append(footer);
+    const footerContainer = document.createElement('div');
+    footerContainer.className = 'cards-card-footer-container';
+    footerContainer.append(footerTitle);
+    footerContainer.append(footerDetails);
+    footer.append(footerContainer);
+  }
+
+  safeAppend(block, blockTitle, ul, footer);
 }
