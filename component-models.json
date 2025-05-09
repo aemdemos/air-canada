@@ -569,7 +569,7 @@
     ]
   },
   {
-    "id": "hero",
+    "id": "hero-x",
     "fields": [
       {
         "component": "reference",

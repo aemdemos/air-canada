@@ -110,7 +110,7 @@
   {
     "id": "heros",
     "components": [
-      "hero"
+      "hero-x"
     ]
   },
   {
