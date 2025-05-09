@@ -328,7 +328,7 @@ main .section.highlight {
 }
 
 .blue-bg-clouds {
-  background: transparent url(/icons/bkgd-rounded-cloud.svg) no-repeat center center;
+  background: transparent url(../icons/bkgd-rounded-cloud.svg) no-repeat center center;
   background-position-y: bottom;
   background-size: cover;
 }
