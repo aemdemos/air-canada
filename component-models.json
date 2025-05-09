@@ -206,13 +206,8 @@
       },
       {
         "component": "reference",
-        "name": "leftRightImage",
-        "label": "Footer Left Image"
-      },
-      {
-        "component": "reference",
-        "name": "footerRightImage",
-        "label": "Footer Right Image"
+        "name": "footerimage",
+        "label": "Footer Image"
       },
       {
         "component": "richtext",
