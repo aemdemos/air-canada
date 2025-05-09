@@ -322,3 +322,13 @@ main .section.highlight {
     content: "\e949";
   }
 }
+
+.light-blue-bg {
+  background-image: linear-gradient(to top, #ddecf5, #fff) !important;
+}
+
+.blue-bg-clouds {
+  background-position-y: bottom;
+  background-size: cover;
+  background: #f0f6fa url(/ac/aircanada/loyalty-content/images/bkgd-rounded-cloud.svg) no-repeat center center;
+}
