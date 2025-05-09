@@ -1,3 +1,4 @@
+import { safeAppend } from '../../scripts/block-helper.js';
 export default function decorate(block) {
   let [title, ...rest] = block.children;
   const container = document.createElement('div');
@@ -12,10 +13,13 @@ export default function decorate(block) {
     container.append(card);
   });
 
-  const eligibility = document.createElement('div');
-  eligibility.classList.add('card-eligibility');
-  eligibility.append(...rest[0].children);
+  let eligibility;
+  if (rest.length > 0) {
+    eligibility = document.createElement('div');
+    eligibility.classList.add('card-eligibility');
+    eligibility.append(...rest[0].children);
+  }
 
   block.innerHTML = '';
-  block.append(title, container, eligibility);
+  safeAppend(block, title, container, eligibility);
 }

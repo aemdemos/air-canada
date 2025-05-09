@@ -1,11 +1,20 @@
 .benefit-cards {
-  display: flex;
+  text-align: center;
   flex-wrap: wrap;
   justify-content: center;
   list-style: none;
   margin-left: 0px;
   margin-right: 0px;
   max-width: 1200px;
+}
+
+.benefit-cards>ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 .benefit-cards .benefit-card {
