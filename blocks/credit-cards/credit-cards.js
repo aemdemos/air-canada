@@ -62,7 +62,7 @@ export default async function decorate(block) {
       child.classList.add(...classes);
     });
 
-    const fragment = div.querySelector(':scope div:last-of-type')
+    const fragment = div.querySelector(':scope>div:last-of-type')
     const a = fragment.querySelector('a');
     li.setAttribute('data-cc-page', a.href);
     fragment.remove();
