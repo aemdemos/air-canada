@@ -500,6 +500,12 @@
         "name": "text",
         "label": "Title",
         "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "cc-page",
+        "label": "Credit Card Page",
+        "valueType": "string"
       }
     ]
   },
