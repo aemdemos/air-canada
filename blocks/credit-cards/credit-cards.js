@@ -1,6 +1,7 @@
 import { moveInstrumentation } from '../../scripts/scripts.js';
+import { loadFragment } from '../fragment/fragment.js';
 
-export default function decorate(block) {
+export default async function decorate(block) {
   const h1 = block.querySelector('h1');
   block.firstElementChild.remove();
 
@@ -60,6 +61,10 @@ export default function decorate(block) {
       ][childIndex] || [];
       child.classList.add(...classes);
     });
+
+    const fragment = div.querySelector(':scope div:last-of-type a')
+    li.setAttribute('data-cc-page', fragment.href);
+    fragment.remove();
 
     li.append(...div.children);
     cardsWrapper.append(li);

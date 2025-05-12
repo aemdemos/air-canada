@@ -1,5 +1,6 @@
-// find the heros element then make the second div active
-document.querySelector('.heros>div:nth-child(2)').classList.add('active');
+import { loadFragment } from '../../blocks/fragment/fragment.js';
+
+// document.querySelector('.heros>div:nth-child(2)').classList.add('active');
 
 // Add event listener for credit card selection
 document.addEventListener('credit-card-selected', (event) => {
@@ -12,6 +13,7 @@ document.addEventListener('credit-card-selected', (event) => {
       card.classList.remove('active');
     });
     cardElement.classList.add('active');
+    loadCreditCardPage(cardElement);
   }
 
   // update the hero class by finding the heros element then select the hero by cardIndex
@@ -24,4 +26,19 @@ document.addEventListener('credit-card-selected', (event) => {
     hero.classList.add('active');
   }
 });
+
+
+async function loadCreditCardPage(cardEl) {
+  // find the active li and load the fragment 
+  const ccPage = cardEl.getAttribute('data-cc-page');
+  const fragmentPath = new URL(ccPage);
+  const fragment = await loadFragment(fragmentPath.pathname);
+  const main = document.querySelector('main');
+  // remove all children of main after the first child
+  while (main.children.length > 1) {
+    main.children[1].remove();
+  }
+  // append the fragment to the main  
+  main.append(...fragment.children);
+}
 
