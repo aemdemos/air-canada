@@ -83,4 +83,12 @@ export default async function decorate(block) {
 
   block.innerHTML = '';
   block.append(h1, ccNav);
+
+  // trigger cards loaded event
+  const event = new CustomEvent('cards-loaded', {
+    detail: {
+      cardsWrapper
+    }
+  });
+  document.dispatchEvent(event);
 }

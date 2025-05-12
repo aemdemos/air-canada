@@ -1,7 +1,5 @@
 import { loadFragment } from '../../blocks/fragment/fragment.js';
 
-// document.querySelector('.heros>div:nth-child(2)').classList.add('active');
-
 // Add event listener for credit card selection
 document.addEventListener('credit-card-selected', (event) => {
   const { cardIndex, cardElement } = event.detail;
@@ -15,16 +13,6 @@ document.addEventListener('credit-card-selected', (event) => {
     cardElement.classList.add('active');
     loadCreditCardPage(cardElement);
   }
-
-  // update the hero class by finding the heros element then select the hero by cardIndex
-  const heros = document.querySelector('.heros');
-  const hero = heros.querySelector(`.hero:nth-child(${cardIndex + 1})`);
-  if (hero) {
-    document.querySelectorAll('.hero').forEach(hero => {
-      hero.classList.remove('active');
-    });
-    hero.classList.add('active');
-  }
 });
 
 
@@ -35,10 +23,41 @@ async function loadCreditCardPage(cardEl) {
   const fragment = await loadFragment(fragmentPath.pathname);
   const main = document.querySelector('main');
   // remove all children of main after the first child
-  while (main.children.length > 1) {
-    main.children[1].remove();
+
+  while (main.children.length > 2) {
+    main.children[2].remove();
   }
   // append the fragment to the main  
+
+  // find the hero-container and add it to the first section under main
+  const heroContainer = fragment.querySelector('.hero-container > .hero-wrapper');
+  if (heroContainer) {
+    const section = main.querySelector('.section');
+    if (section.querySelector('.hero-wrapper')) {
+      section.replaceChild(heroContainer, main.querySelector('.hero-wrapper'));
+    } else {
+      const firstSection = main.querySelector('.section');
+      if (firstSection) {
+        // append the hero-container after the .breadcrumbs-wrapper ini the first section
+        const breadcrumbsWrapper = firstSection.querySelector('.breadcrumbs-wrapper');
+        if (breadcrumbsWrapper) {
+          breadcrumbsWrapper.after(heroContainer);
+        }
+        firstSection.classList.add('hero-container');
+      }
+    }
+  }
+
   main.append(...fragment.children);
 }
 
+document.addEventListener('cards-loaded', (event) => {
+  const { cardsWrapper } = event.detail;
+  if (!window.location.hash) {
+    const secondLi = cardsWrapper.querySelector('.card:nth-child(2)');
+    if (secondLi) {
+      secondLi.classList.add('active');
+      loadCreditCardPage(secondLi);
+    }
+  }
+});

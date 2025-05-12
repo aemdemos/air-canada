@@ -1,12 +1,4 @@
 .personal {
-  .hero {
-    display: none;
-  }
-
-  .hero.active {
-    display: block;
-  }
-
   .banner-wrapper {
     padding-top: 30px;
   }
