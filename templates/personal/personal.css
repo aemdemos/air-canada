@@ -1,5 +1,30 @@
-.personal {
+.personal-template {
   .banner-wrapper {
     padding-top: 30px;
+  }
+
+  .section.benefit-cards-container,
+  .section.two-columns-container,
+  .section.card-details-container,
+  .section.breadcrumbs-container,
+  .section.hero-container {
+    padding: 0;
+    margin: 0;
+  }
+
+  .section.aeroplan-point-cards-container {
+    .aeroplan-point-cards-wrapper {
+      max-width: 1440px;
+    }
+  }
+
+  .card-details-container,
+  .section.benefit-cards-container,
+  .section.two-columns-container {
+    padding-bottom: 50px;
+  }
+
+  .card-details-container {
+    padding: 30px;
   }
 }
