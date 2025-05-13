@@ -35,6 +35,10 @@
   transform: translateY(-50%) rotate(-90deg);
 }
 
+.accordion details:not([open]) .accordion-item-body {
+  display: none;
+}
+
 .accordion details .accordion-item-body {
   padding: 0 16px;
   font: normal 400 16px Open Sans;
