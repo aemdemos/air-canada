@@ -5,6 +5,10 @@ document.addEventListener('credit-card-selected', (event) => {
   const { cardIndex, cardElement } = event.detail;
   const cardsWrapper = document.querySelector('.cards-wrapper');
 
+  if (cardElement.classList.contains('active')) {
+    return;
+  }
+
   // update the active card
   if (cardsWrapper) {
     cardsWrapper.querySelectorAll('.card').forEach(card => {
