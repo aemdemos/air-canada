@@ -1,6 +1,3 @@
-.accordion details {}
-
-/* stylelint-disable-next-line no-descending-specificity */
 .accordion details+details {
   margin-top: 24px;
 }

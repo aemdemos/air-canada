@@ -23,7 +23,7 @@ export default function decorate(block) {
     details.className = 'accordion-item';
     details.append(summary, body);
 
-    moveInstrumentation(row, details);
+    // moveInstrumentation(row, details);
     row.replaceWith(details);
   });
 }
