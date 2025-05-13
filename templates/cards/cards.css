@@ -24,15 +24,4 @@
   .section.card-details-container {
     padding: 30px;
   }
-
-  .light-blue-bg.gifts .aeroplan-point-cards-wrapper {
-    background-image:
-      url(../../icons/td-gifts-2-estore-en.png),
-      linear-gradient(to top, #ddecf5, #fff);
-
-    background-repeat: no-repeat;
-    background-position: bottom right;
-    background-size: 435px, cover;
-    background-position: bottom 0px right 0px, top;
-  }
 }
