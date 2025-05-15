@@ -1,7 +1,4 @@
-.personal-template {
-  .banner-wrapper {
-    padding-top: 30px;
-  }
+.cards-template {
 
   .section.benefit-cards-container,
   .section.two-columns-container,
@@ -24,7 +21,19 @@
     padding-bottom: 50px;
   }
 
-  .card-details-container {
+  .section.card-details-container {
     padding: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cards-template .card-details-container {
+    padding: 0;
+  }
+
+  h3 {
+    font: normal 600 16px Open Sans;
+    text-align: center;
+    margin-bottom: 25px;
   }
 }

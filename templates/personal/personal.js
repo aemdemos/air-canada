@@ -1,5 +1,15 @@
 import { loadFragment } from '../../blocks/fragment/fragment.js';
 
+const DEFAULT_FRAGMENT = '/ca/en/aco/home/aeroplan/credit-cards/td/cards/infinite';
+
+function getFragment(path) {
+  const cachedFragment = window.fragmentCache[path];
+  if (!cachedFragment) {
+    return null;
+  }
+  return cachedFragment.cloneNode(true);
+}
+
 // Add event listener for credit card selection
 document.addEventListener('credit-card-selected', (event) => {
   const { cardIndex, cardElement } = event.detail;
@@ -23,8 +33,12 @@ document.addEventListener('credit-card-selected', (event) => {
 async function loadCreditCardPage(cardEl) {
   // find the active li and load the fragment 
   const ccPage = cardEl.getAttribute('data-cc-page');
-  const fragmentPath = new URL(ccPage);
-  const fragment = await loadFragment(fragmentPath.pathname);
+
+  let fragment;
+  if (fragmentCache[new URL(ccPage).pathname]) {
+    fragment = getFragment(new URL(ccPage).pathname);
+  }
+
   const main = document.querySelector('main');
   // remove all children of main after the first child
 
@@ -55,13 +69,47 @@ async function loadCreditCardPage(cardEl) {
   main.append(...fragment.children);
 }
 
-document.addEventListener('cards-loaded', (event) => {
-  const { cardsWrapper } = event.detail;
-  if (!window.location.hash) {
-    const secondLi = cardsWrapper.querySelector('.card:nth-child(2)');
-    if (secondLi) {
-      secondLi.classList.add('active');
-      loadCreditCardPage(secondLi);
-    }
+
+// document.addEventListener('cards-loaded', (event) => {
+//   const li = document.querySelectorAll('li.card');
+//   li.forEach(async li => {
+//     const ccPage = li.getAttribute('data-cc-page');
+//     const path = new URL(ccPage).pathname;
+//     if (!fragmentCache[path]) {
+//       loadFragment(path).then((fragment) => {
+//         const id = new URL(ccPage).pathname;
+//         console.log(`loading fragment ${id}`);
+//         fragmentCache[id] = fragment;
+//       })
+//     } else {
+//       console.log(`fragment ${path} already loaded`);
+//     }
+//   });
+// });
+
+export default async function decorate(document) {
+  const main = document.querySelector('main');
+  const section = document.querySelector('main .section');
+  section.classList.add('hero-container');
+
+  // generate a fake dom here that will be replaced
+  const heroHolder = document.createElement('div');
+  heroHolder.classList.add('hero-wrapper-holder');
+
+  const fragmentHolder = document.createElement('div');
+  fragmentHolder.classList.add('fragment-holder');
+  main.appendChild(fragmentHolder);
+
+  const breadcrumbsWrapper = section.querySelector('.breadcrumbs-wrapper');
+  if (breadcrumbsWrapper) {
+    breadcrumbsWrapper.after(heroHolder);
   }
-});
+
+  const fragment = getFragment(DEFAULT_FRAGMENT);
+  // update heroHolder with heroContainer
+  const heroContainer = fragment.querySelector('.hero-container > .hero-wrapper');
+  heroHolder.replaceWith(heroContainer);
+
+  // append after section
+  section.after(fragment.children[1]);
+}

@@ -1,7 +1,14 @@
+import { createOptimizedPicture } from '../../scripts/aem.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
-import { loadFragment } from '../fragment/fragment.js';
 
 export default async function decorate(block) {
+
+  block.querySelectorAll('picture > img').forEach((img) => {
+    const optimizedPic = createOptimizedPicture(img.src, img.alt, true, [{ width: '180' }]);
+    moveInstrumentation(img, optimizedPic.querySelector('img'));
+    img.closest('picture').replaceWith(optimizedPic);
+  });
+
   const h1 = block.querySelector('h1');
   block.firstElementChild.remove();
 

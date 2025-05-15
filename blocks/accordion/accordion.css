@@ -23,7 +23,7 @@
   position: absolute;
   top: 50%;
   right: 18px;
-  transform: translateY(-50%) rotate(90deg);
+  transform: translateY(-50%) rotate(-90deg);
   transition: transform 0.2s;
   background-image: url('../../icons/prev-arrow.svg');
   background-size: 25px;
@@ -32,7 +32,7 @@
 }
 
 .accordion details[open] summary::after {
-  transform: translateY(-50%) rotate(-90deg);
+  transform: translateY(-50%) rotate(90deg);
 }
 
 .accordion details:not([open]) .accordion-item-body {
@@ -80,4 +80,12 @@
   top: 2px;
   position: relative;
   margin: 0 5px;
+}
+
+/* less than 768px */
+@media (max-width: 768px) {
+  .accordion details summary {
+    font-size: 14px;
+    padding: 5px 25px;
+  }
 }

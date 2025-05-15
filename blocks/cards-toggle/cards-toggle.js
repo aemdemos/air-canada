@@ -1,3 +1,6 @@
+import { createOptimizedPicture } from '../../scripts/aem.js';
+import { moveInstrumentation } from '../../scripts/scripts.js';
+
 export default function decorate(block) {
 
   const cards = [];
@@ -9,6 +12,13 @@ export default function decorate(block) {
     const toggled = child.querySelector('div:nth-child(4)');
 
     if (!picture || !heading || !description || !toggled) return;
+
+    const img = picture.querySelector('img');
+    if (img) {
+      const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '110' }]);
+      moveInstrumentation(picture, optimizedPic.querySelector('img'));
+      picture.replaceWith(optimizedPic);
+    }
 
     child.classList.add('tile');
 
@@ -27,12 +37,10 @@ export default function decorate(block) {
 
     const learnMore = document.createElement('a');
     learnMore.classList.add('learn-more');
-    learnMore.href = '#';
     learnMore.innerHTML = 'Learn More';
 
     // listen for click on learn more
-    learnMore.addEventListener('click', (e) => {
-      e.preventDefault();
+    child.addEventListener('click', (e) => {
       e.target.closest('.tile').classList.toggle('toggled');
     });
 
@@ -43,3 +51,4 @@ export default function decorate(block) {
 
   block.append(...cards);
 }
+

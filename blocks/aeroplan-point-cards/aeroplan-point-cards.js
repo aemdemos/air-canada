@@ -31,6 +31,14 @@ export default function decorate(block) {
     li.append(container);
 
     row.remove();
+
+    /* move the .cards-card-points into the .cards-card-image div */
+    const points = li.querySelector('.cards-card-points');
+    if (points) {
+      const image = li.querySelector('.cards-card-image');
+      image.append(points);
+    }
+
     ul.append(li);
   });
 

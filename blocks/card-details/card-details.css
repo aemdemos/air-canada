@@ -80,3 +80,67 @@
     font-weight: 600;
   }
 }
+
+/* less than 768px */
+@media (max-width: 768px) {
+  .card-details {
+    flex-direction: column;
+
+    h2 {
+      font: normal 600 20px Open Sans;
+      margin-bottom: 25px;
+    }
+  }
+
+  .card-details .card-details-container {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .card-details .card-details-container .card-detail {
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+
+    >div:first-child {
+      width: 50%;
+      text-align: left;
+
+      p {
+        font: normal 400 14px Open Sans;
+
+        strong {
+          font-weight: 600;
+        }
+      }
+    }
+
+    >div:nth-child(2) {
+      font-size: 24px !important;
+
+      p {
+        margin: 0;
+      }
+    }
+
+    &:after {
+      display: none !important;
+    }
+
+    &:first-of-type {
+      border-top: solid 1px #c8c8c8;
+      padding-top: 20px;
+    }
+
+    &:last-of-type {
+      padding-bottom: 20px;
+    }
+  }
+
+  .card-details .card-eligibility {
+    flex-direction: column;
+  }
+
+}
