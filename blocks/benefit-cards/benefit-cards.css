@@ -86,8 +86,7 @@
 .carousel-arrow,
 .carousel-arrow:hover,
 .carousel-arrow:focus {
-  width: 20px;
-  height: 20px;
+  width: 40px;
   padding: 0px;
   background-image: url('../../icons/prev-arrow.svg');
   background-size: 20px;
@@ -95,6 +94,8 @@
   background-color: transparent;
   background-repeat: no-repeat;
   border: none;
+  background-position-y: center;
+  height: 100%;
 }
 
 .carousel-arrow.left {
@@ -103,6 +104,7 @@
 
 .carousel-arrow.right {
   right: 0px;
+  top: 0;
   transform: rotate(180deg);
 }
 
