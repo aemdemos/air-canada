@@ -71,7 +71,7 @@ export default async function decorate(block) {
 
     const fragment = div.querySelector(':scope>div:last-of-type')
     const a = fragment.querySelector('a');
-    li.setAttribute('data-cc-page', a.href);
+    li.setAttribute('data-cc-page', new URL(a.href).pathname);
     fragment.remove();
 
     li.append(...div.children);

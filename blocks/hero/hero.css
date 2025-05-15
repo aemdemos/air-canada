@@ -89,7 +89,6 @@
 
 @media (width <=768px) {
   .hero {
-    min-height: 250px;
     height: 250px;
 
     img {

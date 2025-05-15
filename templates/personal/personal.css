@@ -1,28 +1,75 @@
 .personal-template {
+  .pages {
+    display: contents;
 
-  .section.benefit-cards-container,
-  .section.two-columns-container,
-  .section.card-details-container,
-  .section.breadcrumbs-container,
-  .section.hero-container {
-    padding: 0;
-    margin: 0;
-  }
+    >div {
+      max-width: unset;
+      padding: 0;
+    }
 
-  .section.aeroplan-point-cards-container {
-    .aeroplan-point-cards-wrapper {
+    .section.benefit-cards-container,
+    .section.two-columns-container,
+    .section.card-details-container,
+    .section.breadcrumbs-container,
+    .section.hero-container {
+      padding: 0;
+      margin: 0;
+    }
+
+    .section.aeroplan-point-cards-container,
+    .section.benefit-cards-container {
+      max-width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .section.aeroplan-point-cards-container .aeroplan-point-cards-wrapper {
       max-width: 1440px;
+    }
+
+    .section.card-details-container {
+      margin-bottom: 50px;
+      padding: 30px;
+    }
+
+    .section.benefit-cards-container,
+    .section.two-columns-container,
+    .section.card-details-container {
+      max-width: 100%;
+      padding: 50px 0;
+
+      &>div {
+        max-width: 1000px;
+        margin: auto;
+        padding: 0 24px;
+      }
+    }
+
+    .hero-wrapper-holder {
+      max-width: unset;
+      padding: 0;
+    }
+
+    .cc-page {
+      display: none !important;
+    }
+
+    .cc-page.active {
+      display: block !important;
     }
   }
 
-  .card-details-container,
-  .section.benefit-cards-container,
-  .section.two-columns-container {
-    padding-bottom: 50px;
+  .hero-wrapper-holder {
+    max-width: unset;
+    padding: 0;
   }
 
-  .section.card-details-container {
-    padding: 30px;
+  .hero-wrapper {
+    display: none;
+  }
+
+  .hero-wrapper.active {
+    display: block;
   }
 }
 

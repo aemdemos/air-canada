@@ -13,10 +13,6 @@ import {
   getMetadata,
 } from './aem.js';
 
-import { loadFragment } from '../blocks/fragment/fragment.js';
-
-window.fragmentCache = {};
-
 /**
  * Moves all the attributes from a given elmenet to another given element.
  * @param {Element} from the element to copy attributes from
@@ -192,22 +188,7 @@ function loadDelayed() {
   // load anything that can be postponed to the latest here
 }
 
-async function loadCreditCards() {
-  const result = [
-    '/ca/en/aco/home/aeroplan/credit-cards/td/cards/infinite',
-    '/ca/en/aco/home/aeroplan/credit-cards/td/cards/infinite-privilege',
-    '/ca/en/aco/home/aeroplan/credit-cards/td/cards/platinum'
-  ].map(async (path) => {
-    const fragment = await loadFragment(path);
-    fragmentCache[path] = fragment;
-  });
-
-  return Promise.all(result);
-}
-
-
 async function loadPage() {
-  await loadCreditCards();
   await loadEager(document);
   await loadLazy(document);
   loadDelayed();

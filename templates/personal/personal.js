@@ -1,9 +1,13 @@
+import { loadFragment } from '../../blocks/fragment/fragment.js';
+
 const DEFAULT_FRAGMENT = '/ca/en/aco/home/aeroplan/credit-cards/td/cards/infinite';
 
-function getFragment(path) {
-  const cachedFragment = window.fragmentCache[path];
+const fragmentCache = {};
+
+async function getFragment(path) {
+  const cachedFragment = fragmentCache[path];
   if (!cachedFragment) {
-    return null;
+    return await loadFragment(path);
   }
   return cachedFragment;
 }
@@ -23,91 +27,132 @@ document.addEventListener('credit-card-selected', (event) => {
       card.classList.remove('active');
     });
     cardElement.classList.add('active');
-    loadCreditCardPage(cardElement);
   }
+
+  activateCreditCardPage(event.detail.cardElement);
 });
+
+function activateCreditCardPage(cardEl) {
+  // for all cards with data-cc-page, remove the active class
+  document.querySelectorAll('.cc-page').forEach(page => {
+    page.classList.remove('active');
+  });
+
+  // remove all active classes from hero-wrapper
+  document.querySelectorAll('.hero-wrapper').forEach(heroWrapper => {
+    heroWrapper.classList.remove('active');
+  });
+
+
+  const path = cardEl.getAttribute('data-cc-page');
+  const pages = document.querySelector('.pages .cc-page[data-cc-page="' + path + '"]');
+  if (pages) {
+    pages.classList.add('active');
+  }
+
+  const heroWrapper = document.querySelector('.hero-wrapper[data-cc-page="' + path + '"]');
+  if (heroWrapper) {
+    heroWrapper.classList.add('active');
+  }
+}
 
 
 async function loadCreditCardPage(cardEl) {
   // find the active li and load the fragment 
-  const ccPage = cardEl.getAttribute('data-cc-page');
+  const path = cardEl.getAttribute('data-cc-page');
+  // const main = document.querySelector('main');
 
   let fragment;
-  if (fragmentCache[new URL(ccPage).pathname]) {
-    fragment = getFragment(new URL(ccPage).pathname);
+  if (fragmentCache[path]) {
+    fragment = await getFragment(path);
   }
 
-  const main = document.querySelector('main');
-  // remove all children of main after the first child
+  const newPage = createCreditCardPage(fragment, path);
+  addNewPage(newPage);
+  return;
 
-  while (main.children.length > 2) {
-    main.children[2].remove();
-  }
-  // append the fragment to the main  
-
-  // find the hero-container and add it to the first section under main
-  const heroContainer = fragment.querySelector('.hero-container > .hero-wrapper');
-  if (heroContainer) {
-    const section = main.querySelector('.section');
-    if (section.querySelector('.hero-wrapper')) {
-      section.replaceChild(heroContainer, main.querySelector('.hero-wrapper'));
-    } else {
-      const firstSection = main.querySelector('.section');
-      if (firstSection) {
-        // append the hero-container after the .breadcrumbs-wrapper ini the first section
-        const breadcrumbsWrapper = firstSection.querySelector('.breadcrumbs-wrapper');
-        if (breadcrumbsWrapper) {
-          breadcrumbsWrapper.after(heroContainer);
-        }
-        firstSection.classList.add('hero-container');
-      }
-    }
-  }
-
-  main.append(...fragment.children);
 }
 
-
-// document.addEventListener('cards-loaded', (event) => {
-//   const li = document.querySelectorAll('li.card');
-//   li.forEach(async li => {
-//     const ccPage = li.getAttribute('data-cc-page');
-//     const path = new URL(ccPage).pathname;
-//     if (!fragmentCache[path]) {
-//       loadFragment(path).then((fragment) => {
-//         const id = new URL(ccPage).pathname;
-//         console.log(`loading fragment ${id}`);
-//         fragmentCache[id] = fragment;
-//       })
-//     } else {
-//       console.log(`fragment ${path} already loaded`);
-//     }
-//   });
-// });
-
 export default async function decorate(document) {
-  const main = document.querySelector('main');
-  const section = document.querySelector('main .section');
-  section.classList.add('hero-container');
+  await loadCreditCards(0);
 
-  // generate a fake dom here that will be replaced
   const heroHolder = document.createElement('div');
   heroHolder.classList.add('hero-wrapper-holder');
 
-  const fragmentHolder = document.createElement('div');
-  fragmentHolder.classList.add('fragment-holder');
-  main.appendChild(fragmentHolder);
+  const section = document.querySelector('main .section');
+  section.classList.add('hero-container');
 
   const breadcrumbsWrapper = section.querySelector('.breadcrumbs-wrapper');
   if (breadcrumbsWrapper) {
     breadcrumbsWrapper.after(heroHolder);
   }
 
-  const fragment = getFragment(DEFAULT_FRAGMENT);
-  // update heroHolder with heroContainer
-  const heroContainer = fragment.querySelector('.hero-container > .hero-wrapper');
-  heroHolder.replaceWith(heroContainer);
+  const fragment = await getFragment(DEFAULT_FRAGMENT);
+  const heroWrapper = addHeroToPage(fragment, DEFAULT_FRAGMENT, heroHolder);
+  heroWrapper.classList.add('active');
 
-  // append after section
-  section.after(...fragment.children);
+  const pages = document.createElement('div');
+  pages.classList.add('pages', 'section');
+
+  const main = document.querySelector('main');
+  main.append(pages);
+
+  const page = createCreditCardPage(fragment, DEFAULT_FRAGMENT);
+  page.classList.add('active');
+  addNewPage(page);
+
+  document.addEventListener('cards-loaded', (event) => {
+    const cardsWrapper = event.detail.cardsWrapper;
+    // to array cardsWrapper.querySelectorAll('.card')
+    const cards = Array.from(cardsWrapper.querySelectorAll('.card'));
+    cards.map(async (card) => {
+      const path = card.getAttribute('data-cc-page');
+      const page = createCreditCardPage(await getFragment(path), path);
+      addNewPage(page);
+    });
+  });
+}
+
+function addHeroToPage(fragment, fragmentId) {
+  const heroContainer = document.querySelector('.hero-wrapper-holder');
+
+  const heroWrapper = fragment.querySelector('.hero-container > .hero-wrapper');
+  if (heroWrapper) {
+    heroWrapper.setAttribute('data-cc-page', fragmentId);
+    heroContainer.appendChild(heroWrapper);
+  }
+  return heroWrapper;
+}
+
+
+function createCreditCardPage(fragment, fragmentId) {
+  const ccPage = document.createElement('div');
+  ccPage.setAttribute('data-cc-page', fragmentId);
+  ccPage.classList.add('cc-page');
+  addHeroToPage(fragment, fragmentId);
+  ccPage.append(...fragment.children);
+  return ccPage;
+}
+
+function addNewPage(newPage) {
+  const path = newPage.getAttribute('data-cc-page');
+  const pages = document.querySelector('.pages .cc-page[data-cc-page="' + path + '"]');
+  if (!pages) {
+    const pages = document.querySelector('.pages');
+    pages.append(newPage);
+  }
+}
+
+async function loadCreditCards(index) {
+  const result = [
+    '/ca/en/aco/home/aeroplan/credit-cards/td/cards/infinite',
+    '/ca/en/aco/home/aeroplan/credit-cards/td/cards/infinite-privilege',
+    '/ca/en/aco/home/aeroplan/credit-cards/td/cards/platinum'
+  ].filter((_, i) => i === index)
+    .map(async (path) => {
+      const fragment = await loadFragment(path);
+      fragmentCache[path] = fragment;
+    });
+
+  return Promise.all(result);
 }

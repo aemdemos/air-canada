@@ -265,7 +265,8 @@ main>.section {
   margin: 40px 0;
 }
 
-main>.section>div {
+main>.section>div,
+main>.pages>div>div.section {
   max-width: 1200px;
   margin: auto;
   padding: 0 24px;
