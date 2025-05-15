@@ -12,6 +12,38 @@ async function getFragment(path) {
   return cachedFragment;
 }
 
+function setupPageObserver(activePage) {
+  if (!activePage) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const remainingContent = activePage.querySelector('.remaining-content');
+        if (remainingContent && remainingContent.children.length > 0) {
+          const nextChild = remainingContent.children[0];
+          activePage.appendChild(nextChild);
+          observer.observe(nextChild);
+          if (remainingContent.children.length === 0) {
+            remainingContent.remove();
+            observer.unobserve(entry.target);
+          }
+        }
+      }
+    });
+
+  }, {
+    root: null,
+    threshold: 1,
+    rootMargin: '0px 0px 0px 0px'
+  });
+
+  // Start observing the first element of the active page
+  const firstChild = activePage.firstElementChild;
+  if (firstChild) {
+    observer.observe(firstChild);
+  }
+}
+
 function activateCreditCardPage(cardEl) {
   // for all cards with data-cc-page, remove the active class
   document.querySelectorAll('.cc-page').forEach((page) => {
@@ -27,6 +59,7 @@ function activateCreditCardPage(cardEl) {
   const pages = document.querySelector(`.pages .cc-page[data-cc-page="${path}"]`);
   if (pages) {
     pages.classList.add('active');
+    setupPageObserver(pages);
   }
 
   const heroWrapper = document.querySelector(`.hero-wrapper[data-cc-page="${path}"]`);
@@ -77,7 +110,24 @@ function createCreditCardPage(fragment, fragmentId) {
   ccPage.setAttribute('data-cc-page', fragmentId);
   ccPage.classList.add('cc-page');
   addHeroToPage(fragment, fragmentId);
-  ccPage.append(...fragment.children);
+
+  // Only add the first child initially
+  if (fragment.children.length > 0) {
+    ccPage.appendChild(fragment.children[0]);
+
+    // Create a wrapper for the remaining children
+    const remainingContent = document.createElement('div');
+    remainingContent.classList.add('remaining-content');
+    remainingContent.style.display = 'none';
+
+    // Move all remaining children to the wrapper
+    while (fragment.children.length > 0) {
+      remainingContent.appendChild(fragment.children[0]);
+    }
+
+    ccPage.appendChild(remainingContent);
+  }
+
   return ccPage;
 }
 
@@ -91,15 +141,15 @@ function addNewPage(newPage) {
 }
 
 export default async function decorate(document) {
-  document.addEventListener('cards-loaded', (event) => {
-    const { cardsWrapper } = event.detail;
-    const cards = Array.from(cardsWrapper.querySelectorAll('.card'));
-    cards.map(async (card) => {
-      const path = card.getAttribute('data-cc-page');
-      const newPage = createCreditCardPage(await getFragment(path), path);
-      addNewPage(newPage);
-    });
-  });
+  // document.addEventListener('cards-loaded', (event) => {
+  //   const { cardsWrapper } = event.detail;
+  //   const cards = Array.from(cardsWrapper.querySelectorAll('.card'));
+  //   cards.map(async (card) => {
+  //     const path = card.getAttribute('data-cc-page');
+  //     const newPage = createCreditCardPage(await getFragment(path), path);
+  //     addNewPage(newPage);
+  //   });
+  // });
 
   fragmentCache[DEFAULT_FRAGMENT] = await loadFragment(DEFAULT_FRAGMENT);
 
@@ -127,4 +177,7 @@ export default async function decorate(document) {
   const page = createCreditCardPage(fragment, DEFAULT_FRAGMENT);
   page.classList.add('active');
   addNewPage(page);
+
+  // Set up observer for the first page
+  setupPageObserver(page);
 }
