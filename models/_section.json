@@ -103,7 +103,8 @@
         "title",
         "cards",
         "columns",
-        "fragment"
+        "fragment",
+        "tabs"
       ]
     },
     {
