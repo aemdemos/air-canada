@@ -1,5 +1,6 @@
 /* global WebImporter */
 
+// eslint-disable-next-line no-unused-vars
 const createHero = (main, document, params) => {
   const page = main.querySelector('#credits-cards-overview-td-personal');
   const heros = page.querySelectorAll('.ae-header');
@@ -10,6 +11,7 @@ const createHero = (main, document, params) => {
 
   const cells = [['Heros']];
 
+  // eslint-disable-next-line no-restricted-syntax
   for (const hero of heros) {
     if (hero) {
       const picImg = hero.querySelector('picture > img');

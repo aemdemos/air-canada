@@ -10,5 +10,4 @@ export const transformers = [
   banner,
 ];
 
-export const postTransformers = [
-];
+export const postTransformers = [];

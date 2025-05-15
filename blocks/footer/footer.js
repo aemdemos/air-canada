@@ -1,7 +1,6 @@
 import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 
-
 function createFooterBrand(footerBrand) {
   const footerBrandContainer = document.createElement('div');
   footerBrandContainer.classList.add('footer-brand-container');
@@ -83,7 +82,7 @@ export default async function decorate(block) {
 
   if (defaultContentWrapper) {
     const pElements = defaultContentWrapper.querySelectorAll(':scope>p');
-    pElements.forEach(pElement => {
+    pElements.forEach((pElement) => {
       const navRowDiv = document.createElement('div');
       navRowDiv.classList.add('nav-col');
 
@@ -106,7 +105,7 @@ export default async function decorate(block) {
   socials.classList.add('socials');
   lastNavCol.append(socials);
 
-  ['facebook', 'twitter', 'youtube', 'newfeed'].forEach(social => {
+  ['facebook', 'twitter', 'youtube', 'newfeed'].forEach((social) => {
     const socialButton = document.createElement('a');
     socialButton.classList.add('social-button');
     socialButton.classList.add(social);

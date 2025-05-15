@@ -2,7 +2,6 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
 
 export default async function decorate(block) {
-
   block.querySelectorAll('picture > img').forEach((img) => {
     const optimizedPic = createOptimizedPicture(img.src, img.alt, true, [{ width: '180' }]);
     moveInstrumentation(img, optimizedPic.querySelector('img'));
@@ -50,7 +49,7 @@ export default async function decorate(block) {
           cardElement: li,
           // Add more details as needed
         },
-        bubbles: true
+        bubbles: true,
       });
       li.dispatchEvent(event);
 
@@ -64,12 +63,12 @@ export default async function decorate(block) {
         ['title'],
         ['image'],
         ['banner'],
-        ['mobile', 'title']
+        ['mobile', 'title'],
       ][childIndex] || [];
       child.classList.add(...classes);
     });
 
-    const fragment = div.querySelector(':scope>div:last-of-type')
+    const fragment = div.querySelector(':scope>div:last-of-type');
     const a = fragment.querySelector('a');
     li.setAttribute('data-cc-page', new URL(a.href).pathname);
     fragment.remove();
@@ -79,7 +78,7 @@ export default async function decorate(block) {
     moveInstrumentation(div, li);
   });
 
-  cardsWrapper.querySelectorAll('a').forEach(a => a.classList.remove('button'));
+  cardsWrapper.querySelectorAll('a').forEach((a) => a.classList.remove('button'));
 
   // Handle mobile/desktop view
   const updateView = () => {
@@ -94,8 +93,8 @@ export default async function decorate(block) {
   // trigger cards loaded event
   const event = new CustomEvent('cards-loaded', {
     detail: {
-      cardsWrapper
-    }
+      cardsWrapper,
+    },
   });
   document.dispatchEvent(event);
 }

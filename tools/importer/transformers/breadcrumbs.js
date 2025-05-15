@@ -1,5 +1,5 @@
 /* global WebImporter */
-const createBreadcrumbs = (main, document, params) => {
+const createBreadcrumbs = (main, document) => {
   const breadcrumb = main.querySelector('.breadcrumb');
 
   if (breadcrumb) {

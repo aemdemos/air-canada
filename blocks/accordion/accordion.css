@@ -14,7 +14,7 @@
   list-style: none;
   overflow: auto;
   transition: background-color 0.2s;
-  box-shadow: 0 6px 19px -7px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 19px -7px rgb(0 0 0 / 15%);
   margin-bottom: 30px;
 }
 
@@ -41,11 +41,11 @@
 
 .accordion details .accordion-item-body {
   padding: 0 16px;
-  font: normal 400 16px Open Sans;
+  font: normal 400 16px "Open Sans";
 
   ul {
     font-size: 14px;
-    color: rgb(42, 42, 42);
+    color: rgb(42 42 42);
     list-style-type: disc;
 
     ul {
@@ -83,7 +83,7 @@
 }
 
 /* less than 768px */
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .accordion details summary {
     font-size: 14px;
     padding: 5px 25px;

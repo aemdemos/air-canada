@@ -2,7 +2,6 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
-
   const cards = [];
 
   [...block.children].forEach((child) => {
@@ -51,4 +50,3 @@ export default function decorate(block) {
 
   block.append(...cards);
 }
-

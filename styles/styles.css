@@ -18,11 +18,10 @@
   --text-color: #131313;
   --link-color: #3b63fb;
   --link-hover-color: #1d3ecf;
-
   --nav-height: 80px;
 
   /* fonts */
-  --body-font-family: 'Open Sans', Arial;
+  --body-font-family: 'Open Sans', arial;
   --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
 
   /* body sizes */
@@ -108,38 +107,38 @@ h6 {
 }
 
 h1 {
-  font: normal 300 36px Open Sans;
+  font: normal 300 36px "Open Sans";
   background: transparent;
   color: #000;
 }
 
 h2 {
-  font: normal 600 28px Open Sans;
+  font: normal 600 28px "Open Sans";
   background: transparent;
   color: #000;
 }
 
 h3 {
-  font: normal 600 20px Open Sans;
+  font: normal 600 20px "Open Sans";
   background: transparent;
   color: #000;
 }
 
 h4 {
-  font: normal 300 18px Open Sans;
+  font: normal 300 18px "Open Sans";
   background: transparent;
   color: #000;
 }
 
 h5 {
-  font: normal 400 16px Open Sans;
+  font: normal 400 16px "Open Sans";
   background: transparent;
   color: #000;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (width <= 767px) {
   h5 {
-    font: normal 400 14px Open Sans;
+    font: normal 400 14px "Open Sans";
   }
 }
 
@@ -299,7 +298,6 @@ main .section.highlight {
 
 .social-button {
   .icon {
-    display: inline-block;
     font-size: 1.8em;
     box-sizing: border-box;
     position: relative;
@@ -329,7 +327,7 @@ main .section.highlight {
 }
 
 .blue-bg-clouds {
-  background: transparent url(../icons/bkgd-rounded-cloud.svg) no-repeat center center;
+  background: transparent url("../icons/bkgd-rounded-cloud.svg") no-repeat center center;
   background-position-y: bottom;
   background-size: cover;
 }
@@ -338,8 +336,7 @@ main .section.highlight {
   background: #f6f4f0;
 }
 
-@media (max-width: 767px) {
-
+@media (width <= 767px) {
   ul,
   ol,
   dl {

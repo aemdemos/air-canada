@@ -34,7 +34,7 @@ export default function benefitCards(block) {
     dots.className = 'carousel-dots';
 
     // Prepare cards
-    const cardElements = cards.map(card => {
+    const cardElements = cards.map((card) => {
       const li = document.createElement('li');
       li.className = 'benefit-card';
       li.append(card);
@@ -42,14 +42,15 @@ export default function benefitCards(block) {
     });
 
     // Add cards to track
-    cardElements.forEach(card => track.appendChild(card));
+    cardElements.forEach((card) => track.appendChild(card));
 
     // Add dots
     cardElements.forEach((_, idx) => {
       const dot = document.createElement('span');
-      dot.className = 'carousel-dot' + (idx === 0 ? ' active' : '');
+      dot.className = `carousel-dot${idx === 0 ? ' active' : ''}`;
       dot.addEventListener('click', () => {
         currentIndex = idx;
+        // eslint-disable-next-line no-use-before-define
         updateCarousel();
       });
       dots.appendChild(dot);

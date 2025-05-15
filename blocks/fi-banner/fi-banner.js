@@ -1,6 +1,4 @@
 export default function decorate(block) {
-
-  // deconstruct the block's children so that the first div is in one div, and the rest of the children are in another div
   const bannerContent = document.createElement('div');
   bannerContent.classList.add('fi-banner-content');
 
@@ -22,4 +20,3 @@ export default function decorate(block) {
   bannerContent.append(bannerRow);
   block.append(bannerContent);
 }
-

@@ -1,6 +1,7 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
 import { safeAppend } from '../../scripts/block-helper.js';
+
 export default function decorate(block) {
   /* change to ul, li */
 
@@ -50,10 +51,9 @@ export default function decorate(block) {
   });
 
   let footer;
-  if (leftImage.querySelector('picture') ||
-    footerTitle.querySelector('p') ||
-    footerDetails.querySelector('p')) {
-
+  if (leftImage.querySelector('picture')
+    || footerTitle.querySelector('p')
+    || footerDetails.querySelector('p')) {
     footer = document.createElement('div');
     footer.className = 'cards-card-footer';
     footer.append(leftImage);
