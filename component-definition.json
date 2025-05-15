@@ -468,8 +468,8 @@
           }
         },
         {
-          "title": "Tabs Item",
-          "id": "tabs-item",
+          "title": "Credit Card",
+          "id": "cc-item",
           "plugins": {
             "xwalk": {
               "page": {
