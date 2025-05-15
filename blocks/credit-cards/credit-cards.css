@@ -157,6 +157,11 @@
 /* when less than 1024px */
 @media (width < 1024px) {
 
+  .credit-cards .card {
+    width: 100%;
+    max-width: 100%;
+  }
+
   .credit-cards .cc-nav {
     box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.15);
   }

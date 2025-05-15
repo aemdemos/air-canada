@@ -1,5 +1,3 @@
-import { loadFragment } from '../../blocks/fragment/fragment.js';
-
 const DEFAULT_FRAGMENT = '/ca/en/aco/home/aeroplan/credit-cards/td/cards/infinite';
 
 function getFragment(path) {
@@ -7,7 +5,7 @@ function getFragment(path) {
   if (!cachedFragment) {
     return null;
   }
-  return cachedFragment.cloneNode(true);
+  return cachedFragment;
 }
 
 // Add event listener for credit card selection
