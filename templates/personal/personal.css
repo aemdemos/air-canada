@@ -14,8 +14,6 @@
   }
 
   .pages {
-    display: contents;
-
     >div {
       max-width: unset;
       padding: 0;

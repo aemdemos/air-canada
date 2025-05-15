@@ -63,6 +63,11 @@ function addHeroToPage(fragment, fragmentId) {
   if (heroWrapper) {
     heroWrapper.setAttribute('data-cc-page', fragmentId);
     heroContainer.appendChild(heroWrapper);
+
+  }
+  const container = fragment.querySelector('.hero-container');
+  if (container) {
+    container.remove();
   }
   return heroWrapper;
 }
