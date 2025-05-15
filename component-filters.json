@@ -108,9 +108,15 @@
     ]
   },
   {
-    "id": "creditcardtabs",
+    "id": "tabs",
     "components": [
-      "creditcardtabitem"
+      "tabs-item"
+    ]
+  },
+  {
+    "id": "tabs-item",
+    "components": [
+      "creditcardsection"
     ]
   },
   {

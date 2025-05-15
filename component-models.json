@@ -598,18 +598,7 @@
     ]
   },
   {
-    "id": "creditcardtabs",
-    "fields": [
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "title",
-        "label": "Title"
-      }
-    ]
-  },
-  {
-    "id": "creditcardtabitem",
+    "id": "tabs-item",
     "fields": [
       {
         "component": "richtext",
@@ -639,12 +628,6 @@
         "component": "text",
         "name": "text",
         "label": "Title",
-        "valueType": "string"
-      },
-      {
-        "component": "aem-content",
-        "name": "page",
-        "label": "Credit Card Page",
         "valueType": "string"
       }
     ]

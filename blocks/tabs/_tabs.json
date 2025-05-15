@@ -1,31 +1,30 @@
 {
   "definitions": [
     {
-      "title": "Credit Card Tabs",
-      "id": "creditcardtabs",
+      "title": "Tabs",
+      "id": "tabs",
       "plugins": {
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/block/v1/block",
             "template": {
-              "name": "Credit Card Tabs",
-              "model": "creditcardtabs",
-              "filter": "creditcardtabs"
+              "name": "Tabs",
+              "filter": "tabs"
             }
           }
         }
       }
     },
     {
-      "title": "Credit Card Tab Item",
-      "id": "creditcardtabitem",
+      "title": "Tabs Item",
+      "id": "tabs-item",
       "plugins": {
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/block/v1/block/item",
             "template": {
-              "name": "Credit Card Tab Item",
-              "model": "creditcardtabitem"
+              "name": "Tab",
+              "model": "tabs-item"
             }
           }
         }
@@ -34,18 +33,7 @@
   ],
   "models": [
     {
-      "id": "creditcardtabs",
-      "fields": [
-        {
-          "component": "richtext",
-          "valueType": "string",
-          "name": "title",
-          "label": "Title"
-        }
-      ]
-    },
-    {
-      "id": "creditcardtabitem",
+      "id": "tabs-item",
       "fields": [
         {
           "component": "richtext",
@@ -76,21 +64,21 @@
           "name": "text",
           "label": "Title",
           "valueType": "string"
-        },
-        {
-          "component": "aem-content",
-          "name": "page",
-          "label": "Credit Card Page",
-          "valueType": "string"
         }
       ]
     }
   ],
   "filters": [
     {
-      "id": "creditcardtabs",
+      "id": "tabs",
       "components": [
-        "creditcardtabitem"
+        "tabs-item"
+      ]
+    },
+    {
+      "id": "tabs-item",
+      "components": [
+        "creditcardsection"
       ]
     }
   ]
