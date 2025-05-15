@@ -72,11 +72,11 @@
     {
       "id": "tabs",
       "components": [
-        "tabs-item"
+        "cc-item"
       ]
     },
     {
-      "id": "tabs-item",
+      "id": "cc-item",
       "components": [
         "creditcardsection"
       ]
