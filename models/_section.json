@@ -92,25 +92,25 @@
         },
         {
           "component": "richtext",
-          "name": "name",
-          "label": "Card Name",
+          "name": "cardtitle",
+          "label": "Card Title",
           "valueType": "string"
         },
         {
           "component": "reference",
-          "name": "image",
+          "name": "cardimage",
           "label": "Card Image",
           "valueType": "string"
         },
         {
           "component": "richtext",
-          "name": "banner",
+          "name": "cardbanner",
           "label": "Banner Text",
           "valueType": "string"
         },
         {
           "component": "text",
-          "name": "type",
+          "name": "cardtype",
           "label": "Card Type",
           "valueType": "string"
         }
