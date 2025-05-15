@@ -111,5 +111,5 @@ export default async function decorate(document) {
   heroHolder.replaceWith(heroContainer);
 
   // append after section
-  section.after(fragment.children[1]);
+  section.after(...fragment.children);
 }
