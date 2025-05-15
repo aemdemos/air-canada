@@ -598,7 +598,7 @@
     ]
   },
   {
-    "id": "tabs-item",
+    "id": "cc-item",
     "fields": [
       {
         "component": "richtext",
