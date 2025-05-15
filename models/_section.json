@@ -89,6 +89,30 @@
               "value": "gifts"
             }
           ]
+        },
+        {
+          "component": "richtext",
+          "name": "name",
+          "label": "Card Name",
+          "valueType": "string"
+        },
+        {
+          "component": "reference",
+          "name": "image",
+          "label": "Card Image",
+          "valueType": "string"
+        },
+        {
+          "component": "richtext",
+          "name": "banner",
+          "label": "Banner Text",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "type",
+          "label": "Card Type",
+          "valueType": "string"
         }
       ]
     }
