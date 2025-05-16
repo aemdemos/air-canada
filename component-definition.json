@@ -88,8 +88,7 @@
                 "template": {
                   "name": "Credit Card Section",
                   "model": "creditcardsection",
-                  "filter": "creditcardsection",
-                  "style": "creditcardsection"
+                  "filter": "creditcardsection"
                 }
               }
             }
