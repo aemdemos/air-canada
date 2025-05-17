@@ -136,7 +136,7 @@ h5 {
   color: #000;
 }
 
-@media only screen and (width <= 767px) {
+@media only screen and (width <=767px) {
   h5 {
     font: normal 400 14px "Open Sans";
   }
@@ -271,7 +271,8 @@ main>.pages>div>div.section {
   padding: 0 24px;
 }
 
-main>.section:first-of-type {
+main>.section:first-of-type,
+main>.section.hero-container {
   margin-top: 0;
 }
 
@@ -336,7 +337,8 @@ main .section.highlight {
   background: #f6f4f0;
 }
 
-@media (width <= 767px) {
+@media (width <=767px) {
+
   ul,
   ol,
   dl {

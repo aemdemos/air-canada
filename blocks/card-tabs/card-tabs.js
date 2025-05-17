@@ -48,6 +48,11 @@ export default function decorate($block) {
   const tabNavContainer = document.createElement('div');
   tabNavContainer.classList.add('tab-nav-container');
 
+  const container = document.createElement('div');
+  container.classList.add('tab-nav');
+
+  tabNavContainer.append(container);
+
   const title = document.createElement('h2');
   title.textContent = 'TD® Aeroplan® Personal Credit Cards';
   tabNavContainer.prepend(title);
@@ -55,8 +60,23 @@ export default function decorate($block) {
   $block.prepend(tabNavContainer);
   createTabs($block);
 
+  /* Mobile Container */
+  const mobileContainer = document.createElement('div');
+
+  mobileContainer.classList.add('mobile-cc-container');
+  mobileContainer.innerHTML = `
+    <span class="dropdown-label">Select a card</span>
+    <span class="mobile-content">TD® Aeroplan® Visa Infinite* Card</span>
+    <span class="dropdown-arrow closed"></span>
+  `;
+
+  mobileContainer.addEventListener('click', () => {
+    mobileContainer.querySelector('.dropdown-arrow').classList.toggle('closed');
+  });
+
   const tabNav = $block.querySelector('ul');
-  tabNavContainer.append(tabNav);
+  container.append(mobileContainer);
+  container.append(tabNav);
 
   // remove the next sibling of tab-nav-container
   const { nextSibling } = tabNavContainer;
@@ -88,6 +108,11 @@ export default function decorate($block) {
       });
 
       activeTabIndex = newIndex;
+
+      mobileContainer.querySelector('.dropdown-arrow').classList.add('closed');
+      document.dispatchEvent(new Event('card-tabs-updated'));
     });
   });
+
+  document.dispatchEvent(new Event('card-tabs-updated'));
 }
