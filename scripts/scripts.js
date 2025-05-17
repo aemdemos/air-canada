@@ -11,6 +11,8 @@ import {
   loadSections,
   loadCSS,
   getMetadata,
+  buildBlock,
+  readBlockConfig,
 } from './aem.js';
 
 /**
@@ -59,13 +61,63 @@ async function loadFonts() {
   }
 }
 
+function buildTabs(main) {
+  const tabContainer = document.createElement('div');
+  tabContainer.className = 'section';
+
+  /* for each section create a tab object that has the sectionEl and the sectionMeta block */
+  const tabs = [...main.querySelectorAll(':scope > div')]
+    .map((section) => {
+      const sectionMeta = section.querySelector('div.section-metadata');
+      if (sectionMeta) {
+        const meta = readBlockConfig(sectionMeta);
+        // we only care about our sections
+        if (meta.cardbanner && meta.cardtitle && meta.cardimage && meta.cardtype) {
+          return [section, sectionMeta];
+        }
+      }
+      return null;
+    })
+    .filter((el) => !!el);
+
+  if (tabs.length) {
+    const section = document.createElement('div');
+    section.className = 'section';
+
+    const ul = document.createElement('ul');
+    // for each section return an li that has the raw section metadata
+    ul.append(
+      ...tabs
+        .map(([, sectionMetadata], index) => {
+          const li = document.createElement('li');
+          li.classList.add('tab-item');
+          li.setAttribute('data-tab-index', index);
+          li.innerHTML = sectionMetadata.innerHTML;
+          sectionMetadata.remove();
+          return li;
+        }),
+    );
+
+    /* build the tabs block */
+    const tabsBlock = buildBlock('card-tabs', [[ul]]);
+    section.append(tabsBlock);
+    [...main.querySelectorAll(':scope > div')].forEach((s, i) => {
+      s.classList.add('tabs-panel');
+      s.setAttribute('data-tab-index', i);
+      tabsBlock.append(s);
+    });
+
+    main.insertBefore(section, main.firstChild);
+  }
+}
+
 /**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
-function buildAutoBlocks() {
+function buildAutoBlocks(main) {
   try {
-    // TODO: add auto block, if needed
+    buildTabs(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
