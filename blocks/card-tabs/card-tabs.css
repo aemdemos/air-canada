@@ -37,6 +37,7 @@
     }
   }
 
+  height: 254px;
   cursor: pointer;
   background-color: #f1f1f1;
   padding: 20px;
@@ -57,7 +58,7 @@
     line-height: 1.4;
   }
 
-  .tab-item-image {
+  .tab-item-image>picture>img {
     width: 180px;
     height: 118px;
     display: block;
@@ -78,5 +79,4 @@
   .tab-item-card-type {
     display: none;
   }
-
 }

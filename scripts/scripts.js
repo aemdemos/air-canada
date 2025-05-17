@@ -104,7 +104,6 @@ function buildTabs(main) {
     [...main.querySelectorAll(':scope > div')].forEach((s, i) => {
       s.classList.add('tabs-panel');
       s.setAttribute('data-tab-index', i);
-      tabsBlock.append(s);
     });
 
     main.insertBefore(section, main.firstChild);

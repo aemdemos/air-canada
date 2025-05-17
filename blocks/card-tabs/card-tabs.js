@@ -40,12 +40,6 @@ export function createTabs(block) {
     tabs[0].classList.add('active');
   }
 
-  // search referenced sections and move them inside the tab-container
-  const sections = document.querySelectorAll('[data-tab]');
-
-  [...sections].forEach((section) => {
-    section.classList.add('tabs-panel');
-  });
 }
 
 /**
