@@ -1,0 +1,17 @@
+.aeroplan-point-cards-wrapper {
+  margin: 0 !important;
+  padding: 0 !important;
+  max-width: 100% !important;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(to top, #ddecf5, #fff);
+
+  .aeroplan-point-cards {
+    max-width: 1440px;
+    background-image: url(../../icons/td-gifts-2-estore-en.png);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: 435px, cover;
+    background-position: bottom 0px right 0px, top;
+  }
+}
