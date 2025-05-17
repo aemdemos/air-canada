@@ -103,6 +103,31 @@
     ]
   },
   {
+    "id": "container",
+    "components": [
+      "tabs-creditcard",
+      "breadcrumbs",
+      "text",
+      "image",
+      "button",
+      "title",
+      "hero",
+      "cards",
+      "columns",
+      "fragment",
+      "locator",
+      "banner",
+      "cards-toggle",
+      "offer-banner",
+      "fi-banner",
+      "aeroplan-point-cards",
+      "benefit-cards",
+      "two-columns",
+      "card-details",
+      "accordion"
+    ]
+  },
+  {
     "id": "creditcards",
     "components": [
       "creditcard"
