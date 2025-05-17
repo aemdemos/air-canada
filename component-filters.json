@@ -15,7 +15,8 @@
       "title",
       "cards",
       "columns",
-      "fragment"
+      "fragment",
+      "tabs"
     ]
   },
   {
@@ -40,7 +41,8 @@
       "benefit-cards",
       "two-columns",
       "card-details",
-      "accordion"
+      "accordion",
+      "container"
     ]
   },
   {
@@ -102,15 +104,46 @@
     ]
   },
   {
+    "id": "container",
+    "components": [
+      "tabs-creditcard",
+      "breadcrumbs",
+      "text",
+      "image",
+      "button",
+      "title",
+      "hero",
+      "cards",
+      "columns",
+      "fragment",
+      "locator",
+      "banner",
+      "cards-toggle",
+      "offer-banner",
+      "fi-banner",
+      "aeroplan-point-cards",
+      "benefit-cards",
+      "two-columns",
+      "card-details",
+      "accordion"
+    ]
+  },
+  {
     "id": "creditcards",
     "components": [
       "creditcard"
     ]
   },
   {
-    "id": "creditcardtabs",
+    "id": "tabs",
     "components": [
-      "creditcardtabitem"
+      "cc-item"
+    ]
+  },
+  {
+    "id": "cc-item",
+    "components": [
+      "creditcardsection"
     ]
   },
   {
