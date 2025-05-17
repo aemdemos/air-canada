@@ -39,7 +39,6 @@ export function createTabs(block) {
   } else {
     tabs[0].classList.add('active');
   }
-
 }
 
 /**
