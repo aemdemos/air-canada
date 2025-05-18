@@ -1,13 +1,7 @@
   .card-tabs-container {
     position: relative;
     box-sizing: border-box;
-    top: -100px;
     width: 100%;
-    max-width: 1200px;
-
-    .card-tabs-wrapper {
-      background-color: white;
-    }
   }
 
   @media (width < 768px) {
@@ -18,7 +12,10 @@
   }
 
   .card-tabs {
+    padding: 0 !important;
+
     .tab-nav-container {
+      background-color: white;
       padding-top: 20px;
       box-shadow: 0 -6px 19px -7px rgb(0 0 0 / 20%);
 
@@ -35,6 +32,8 @@
   }
 
   .tabs-panel {
+    width: 100%;
+    box-sizing: border-box;
     display: none;
   }
 

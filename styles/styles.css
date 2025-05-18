@@ -264,20 +264,25 @@ main>.section {
   margin: 40px 0;
 }
 
-main>.section>div,
-main>.pages>div>div.section {
+
+main>.section:not(.hero-container)>div>div {
   max-width: 1200px;
   margin: auto;
   padding: 0 24px;
+  position: relative;
+}
+
+main>.section:first-of-type {
+  margin-top: 0;
 }
 
 main>.section:first-of-type,
-main>.section.hero-container {
+main>.hero-container {
   margin-top: 0;
 }
 
 @media (width >=900px) {
-  main>.section>div {
+  main>.section>div>div {
     padding: 0 32px;
   }
 }

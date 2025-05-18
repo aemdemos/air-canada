@@ -1,7 +1,19 @@
-.aeroplan-point-cards-wrapper,
-.benefit-cards-wrapper {
-  margin: 0 !important;
+.card-tabs-container {
   padding: 0 !important;
+}
+
+.two-columns-wrapper,
+.benefit-cards-wrapper,
+.banner-wrapper,
+.card-details-wrapper,
+.accordion-wrapper {
+  padding: 30px 0 !important;
+}
+
+.aeroplan-point-cards-wrapper,
+.benefit-cards-wrapper,
+.two-columns-wrapper {
+  margin: 0 !important;
   max-width: 100% !important;
   display: flex;
   justify-content: center;
@@ -22,4 +34,42 @@
 
 .benefit-cards-wrapper {
   background: linear-gradient(to top, #ddecf5, #fff);
+}
+
+.two-columns-wrapper {
+  background: #f0f6fa url(../../icons/bkgd-rounded-cloud.svg) no-repeat center center;
+  background-position-y: bottom;
+  background-size: cover;
+}
+
+.card-details-wrapper {
+  background: #f6f4f0;
+  max-width: unset !important;
+
+  .card-details {
+    max-width: 1200px;
+    margin: auto;
+  }
+}
+
+
+.card-tabs {
+  background-color: white;
+  transform: translateY(-160px);
+}
+
+.card-tabs-container {
+  top: 0 !important;
+}
+
+.hero-wrapper {
+  display: none;
+}
+
+.hero-wrapper.active {
+  display: block;
+}
+
+.tabs-panel.active {
+  transform: translateY(-150px);
 }
