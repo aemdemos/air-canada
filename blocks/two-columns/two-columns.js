@@ -12,8 +12,7 @@ export default function decorate(block) {
       card.classList.add('two-columns-title');
       const h2 = document.createElement('h2');
       h2.textContent = card.querySelector('div:first-child').textContent;
-      card.innerHTML = '';
-      card.querySelector('div:first-child').appendChild(h2);
+      card.querySelector('div:first-child').replaceWith(h2);
     }
 
     container.append(card);
