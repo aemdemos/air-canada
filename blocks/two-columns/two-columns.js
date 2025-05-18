@@ -1,5 +1,3 @@
-import { moveInstrumentation } from '../../scripts/scripts.js';
-
 export default function decorate(block) {
   const [title, ...cards] = block.children;
 
@@ -14,8 +12,7 @@ export default function decorate(block) {
       card.classList.add('two-columns-title');
       const h2 = document.createElement('h2');
       h2.textContent = card.querySelector('div:first-child').textContent;
-      moveInstrumentation(card.querySelector('div:first-child'), h2);
-      card.querySelector('div:first-child').replaceWith(h2);
+      card.querySelector('div:first-child').append(h2);
     }
     container.append(card);
   });
