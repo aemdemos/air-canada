@@ -14,7 +14,6 @@ export default function decorate(block) {
       h2.textContent = card.querySelector('div:first-child').textContent;
       card.querySelector('div:first-child').replaceWith(h2);
     }
-
     container.append(card);
   });
 
