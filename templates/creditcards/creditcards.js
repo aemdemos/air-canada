@@ -1,3 +1,4 @@
+/* Try to force a refresh in code */
 export default function decorate(document) {
   const main = document.querySelector('main');
   const heroContainer = document.createElement('div');
