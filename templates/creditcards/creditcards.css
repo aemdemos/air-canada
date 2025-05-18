@@ -48,6 +48,9 @@
   }
 }
 
+.tabs-panel.active {
+  transform: translateY(-150px);
+}
 
 .card-tabs {
   background-color: white;
@@ -64,8 +67,4 @@
 
 .hero-wrapper.active {
   display: block;
-}
-
-.tabs-panel.active {
-  transform: translateY(-150px);
 }
