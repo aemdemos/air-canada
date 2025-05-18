@@ -56,4 +56,8 @@
   .two-columns .two-columns-container {
     grid-template-columns: 1fr;
   }
+
+  .two-columns .two-columns-title {
+    grid-column: span 1;
+  }
 }
