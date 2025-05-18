@@ -1,9 +1,13 @@
-.aeroplan-point-cards-wrapper {
+.aeroplan-point-cards-wrapper,
+.benefit-cards-wrapper {
   margin: 0 !important;
   padding: 0 !important;
   max-width: 100% !important;
   display: flex;
   justify-content: center;
+}
+
+.aeroplan-point-cards-wrapper {
   background: linear-gradient(to top, #ddecf5, #fff);
 
   .aeroplan-point-cards {
@@ -14,4 +18,8 @@
     background-size: 435px, cover;
     background-position: bottom 0px right 0px, top;
   }
+}
+
+.benefit-cards-wrapper {
+  background: linear-gradient(to top, #ddecf5, #fff);
 }

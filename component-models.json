@@ -488,44 +488,6 @@
     ]
   },
   {
-    "id": "container",
-    "fields": [
-      {
-        "component": "multiselect",
-        "name": "style",
-        "value": "",
-        "label": "Section Style",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "White",
-            "value": "white-bg"
-          },
-          {
-            "name": "Light Blue",
-            "value": "light-blue-bg"
-          },
-          {
-            "name": "Blue Cloud",
-            "value": "blue-bg-clouds"
-          },
-          {
-            "name": "Pink",
-            "value": "pink-bg"
-          },
-          {
-            "name": "Image Below",
-            "value": "image-below"
-          },
-          {
-            "name": "Gifts",
-            "value": "gifts"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "id": "creditcards",
     "fields": [
       {
