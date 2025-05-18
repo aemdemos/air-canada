@@ -41,8 +41,7 @@
       "benefit-cards",
       "two-columns",
       "card-details",
-      "accordion",
-      "coverage"
+      "accordion"
     ]
   },
   {
@@ -101,12 +100,6 @@
       "image",
       "button",
       "title"
-    ]
-  },
-  {
-    "id": "coverage",
-    "components": [
-      "two-columns"
     ]
   },
   {

@@ -677,6 +677,12 @@
     "id": "two-columns-item",
     "fields": [
       {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      },
+      {
         "component": "reference",
         "valueType": "string",
         "name": "icon",
