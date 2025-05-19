@@ -29,6 +29,7 @@
       "button",
       "title",
       "hero",
+      "heros",
       "cards",
       "columns",
       "fragment",
@@ -106,6 +107,12 @@
     "id": "creditcards",
     "components": [
       "creditcard"
+    ]
+  },
+  {
+    "id": "heros",
+    "components": [
+      "hero-item"
     ]
   },
   {

@@ -12,15 +12,6 @@ import { decorateRichtext } from './editor-support-rte.js';
 import { decorateMain } from './scripts.js';
 
 async function applyChanges(event) {
-  document.querySelectorAll('.hero-wrapper-cloned').forEach((hero) => {
-    // hero remove all data properties that start with 'data-aue'
-    Object.keys(hero.dataset).forEach((key) => {
-      if (key.startsWith('data-aue')) {
-        delete hero.dataset[key];
-      }
-    });
-  });
-
   // redecorate default content and blocks on patches (in the properties rail)
   const { detail } = event;
 

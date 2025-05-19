@@ -613,6 +613,38 @@
     ]
   },
   {
+    "id": "hero-item",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Alt",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "name": "pill",
+        "label": "Pill Text",
+        "value": "",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text"
+      }
+    ]
+  },
+  {
     "id": "offer-banner",
     "fields": [
       {
