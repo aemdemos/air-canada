@@ -19,7 +19,6 @@ async function applyChanges(event) {
         delete hero.dataset[key];
       }
     });
-    hero.remove();
   });
 
   // redecorate default content and blocks on patches (in the properties rail)
