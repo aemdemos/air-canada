@@ -2,10 +2,17 @@
   --header-nav-brand-height: 28px;
   --header-nav-brand-width: 240px;
   --header-nav-height: 86px;
+  --language-height: 30px;
 }
 
 header {
-  height: var(--header-nav-height);
+  height: calc(var(--header-nav-height) + var(--language-height));
+}
+
+@media (width < 1024px) {
+  :root {
+    --language-height: 0px;
+  }
 }
 
 /* if less than 900px, set the nav height to 60px */

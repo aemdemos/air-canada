@@ -295,16 +295,19 @@ main .section.highlight {
   gap: 16px;
 }
 
+.icon {
+  font-size: 1.8em;
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  font-family: 'AC Icomoon';
+
+  &.find::after {
+    content: "\e60c";
+  }
+}
 
 .social-button {
-  .icon {
-    font-size: 1.8em;
-    box-sizing: border-box;
-    position: relative;
-    display: inline-block;
-    font-family: 'AC Icomoon';
-  }
-
   .icon-facebook::before {
     content: "\e94a";
   }
@@ -348,4 +351,108 @@ main .section.highlight {
     padding-left: 20px;
     margin-bottom: 25px;
   }
+}
+
+.page-header {
+  background: #4A4F55;
+  font-weight: 300;
+  min-height: 30px;
+  color: white;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: end;
+  margin: 0;
+
+
+  .language-link::after {
+    content: '';
+    display: inline-block;
+    margin-left: 10px;
+    transform: rotate(135deg);
+    width: 8px;
+    height: 8px;
+    border: 2px solid white;
+    border-radius: 0 1px 0 0;
+    border-width: 2px 2px 0 0;
+    top: -2px;
+    position: relative;
+  }
+
+  input {
+    width: 275px;
+    color: #2A2A2A;
+    padding-left: 10px;
+  }
+
+  .search-form {
+    padding: 0 0 0 60px;
+  }
+
+  .search-form-container {
+    width: 300px;
+    background: #C8C8C8;
+    line-height: 16px;
+    margin: 2px;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .search-form .txt-search-box {
+    box-sizing: border-box;
+    font-size: 14px;
+    background: transparent;
+    outline: none;
+    border: none;
+    min-height: 30px;
+    width: 275px;
+    color: #2A2A2A;
+    font-weight: 600;
+  }
+
+  .search-form .txt-search-box::placeholder {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #2A2A2A;
+    opacity: 1;
+    text-transform: none;
+    text-overflow: ellipsis !important;
+  }
+
+  .accessibility-link {
+    font-weight: 600;
+    font-size: 14px;
+    padding: 0 40px;
+  }
+
+  a {
+    color: white;
+    font-size: 14px;
+  }
+
+  img {
+    width: 20px;
+    padding: 0 10px;
+  }
+
+  .icon {
+    color: #2A2A2A;
+    font-size: 20px;
+    width: 20px;
+  }
+}
+
+@media (width < 1024px) {
+  .page-header {
+    display: none;
+  }
+}
+
+.btn-ghost {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  padding: 0;
 }

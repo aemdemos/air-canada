@@ -1,4 +1,44 @@
 export default function decorate(document) {
+  const pageHeader = document.createElement('div');
+  pageHeader.classList.add('page-header');
+
+  const flag = document.createElement('img');
+  flag.src = '/icons/flag-ca.png';
+  flag.alt = 'Canada Flag';
+  flag.classList.add('flag');
+
+  const accessibilityLink = document.createElement('a');
+  accessibilityLink.classList.add('accessibility-link');
+  accessibilityLink.href = 'https://www.aircanada.com/ca/en/aco/home/plan/accessibility.html';
+  accessibilityLink.appendChild(flag);
+  accessibilityLink.innerHTML = 'Accessibility';
+
+  const language = document.createElement('a');
+  language.href = '#';
+  language.innerHTML = 'English';
+  language.classList.add('language-link');
+  const search = document.createElement('form');
+  search.classList.add('search-form', 'input-groupd');
+  search.action = 'https://www.aircanada.com/ca/en/aco/home/search-results.html';
+  search.method = 'get';
+  search.innerHTML = `<div class="search-form-container">
+      <label class="search-holder label" for="searchbox_011"></label>
+      <input type="text" class="txt-box txt-search-box" id="searchbox_011" placeholder="FIND" value="" role="textbox">
+        <span type="submit" class="icon find btn-ghost" role="button"></span>
+    </div>`;
+
+  pageHeader.appendChild(accessibilityLink);
+  pageHeader.appendChild(flag);
+  pageHeader.appendChild(language);
+  pageHeader.appendChild(search);
+
+
+  const header = document.querySelector('header');
+  header.appendChild(pageHeader);
+
+
+  document.querySelector('.hero-wrapper').appendChild(pageHeader);
+
   document.addEventListener('card-tabs-updated', (event) => {
     const { tabIndex } = event.detail;
     const hero = document.querySelector(`.hero[data-tab-index="${tabIndex}"]`);
