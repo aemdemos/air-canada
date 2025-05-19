@@ -67,12 +67,14 @@ function buildTabs(main) {
 
   /* for each section create a tab object that has the sectionEl and the sectionMeta block */
   const tabs = [...main.querySelectorAll(':scope > div')]
-    .map((section) => {
+    .map((section, i) => {
       const sectionMeta = section.querySelector('div.section-metadata');
       if (sectionMeta) {
         const meta = readBlockConfig(sectionMeta);
         // we only care about our sections
         if (meta.cardbanner && meta.cardtitle && meta.cardimage && meta.cardtype) {
+          section.classList.add('tabs-panel');
+          section.setAttribute('data-tab-index', i - 1);
           return [section, sectionMeta];
         }
       }
@@ -101,12 +103,14 @@ function buildTabs(main) {
     /* build the tabs block */
     const tabsBlock = buildBlock('card-tabs', [[ul]]);
     section.append(tabsBlock);
-    [...main.querySelectorAll(':scope > div')].forEach((s, i) => {
-      s.classList.add('tabs-panel');
-      s.setAttribute('data-tab-index', i);
-    });
 
-    main.insertBefore(section, main.firstChild);
+    // insert the section before the first tabs-panel
+    const firstTabsPanel = main.querySelector('.tabs-panel');
+    if (firstTabsPanel) {
+      main.insertBefore(section, firstTabsPanel);
+    } else {
+      main.appendChild(section);
+    }
   }
 }
 

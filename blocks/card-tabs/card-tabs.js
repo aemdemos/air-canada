@@ -110,9 +110,9 @@ export default function decorate($block) {
       activeTabIndex = newIndex;
 
       mobileContainer.querySelector('.dropdown-arrow').classList.add('closed');
-      document.dispatchEvent(new Event('card-tabs-updated', { detail: { tabIndex: newIndex } }));
+      document.dispatchEvent(new CustomEvent('card-tabs-updated', { detail: { tabIndex: activeTabIndex } }));
     });
   });
 
-  document.dispatchEvent(new Event('card-tabs-updated'));
+  document.dispatchEvent(new CustomEvent('card-tabs-updated', { detail: { tabIndex: activeTabIndex } }));
 }

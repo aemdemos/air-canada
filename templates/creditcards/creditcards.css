@@ -4,7 +4,6 @@
 
 .two-columns-wrapper,
 .benefit-cards-wrapper,
-.banner-wrapper,
 .card-details-wrapper,
 .accordion-wrapper {
   padding: 30px 0 !important;
@@ -53,12 +52,16 @@
 }
 
 .tabs-panel.active {
-  top: var(--hero-wrapper-top-position);
+  /* top: var(--hero-wrapper-top-position); */
   position: relative;
 }
 
 .hero-wrapper-original {
   display: none !important;
+}
+
+.card-tabs-container {
+  margin-top: -200px !important;
 }
 
 .card-tabs {
@@ -68,11 +71,7 @@
 .card-tabs-wrapper {
   position: relative;
   z-index: 2;
-  top: var(--hero-wrapper-top-position);
-}
-
-.card-tabs-container {
-  top: 0 !important;
+  /* top: var(--hero-wrapper-top-position); */
 }
 
 .hero-wrapper {

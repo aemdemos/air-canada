@@ -174,7 +174,7 @@ pre {
   white-space: pre;
 }
 
-main>div {
+main>div>div {
   margin: 40px 16px;
 }
 
@@ -260,12 +260,12 @@ main img {
 }
 
 /* sections */
-main>.section {
+main>.section>div {
   margin: 40px 0;
 }
 
 
-main>.section:not(.hero-container)>div>div {
+main>.section:not(.heros-container)>div>div {
   max-width: 1200px;
   margin: auto;
   padding: 0 24px;
@@ -277,7 +277,7 @@ main>.section:first-of-type {
 }
 
 main>.section:first-of-type,
-main>.hero-container {
+main>.heros-container {
   margin-top: 0;
 }
 
