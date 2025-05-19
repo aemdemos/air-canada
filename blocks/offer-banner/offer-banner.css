@@ -5,6 +5,7 @@
   background-color: #f2f2f2;
   padding: 24px 30px !important;
   font: normal 400 14px 'Open Sans';
+  box-sizing: border-box;
 }
 
 .offer-banner .icon {

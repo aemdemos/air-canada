@@ -1,19 +1,20 @@
 .banner-wrapper {
-
   .banner {
     display: flex;
     align-items: center;
     max-width: 1200px;
-    width: 100%;
     background-image: linear-gradient(89deg, #c3e7fd -28%, #f1f7fa 51%);
+    min-height: 80px;
+    box-sizing: border-box;
 
     p {
       margin: 0;
     }
 
     img {
-      max-width: 175px;
-      max-height: 70px;
+      width: 175px;
+      height: auto;
+      display: flex;
     }
 
     a {
@@ -22,6 +23,24 @@
       font-weight: 600;
       color: #005078;
       text-decoration: underline;
+    }
+  }
+
+  @media (width < 768px) {
+    margin-top: 70px !important;
+
+    .banner {
+      flex-direction: column;
+
+      img {
+        margin: -40px auto 0;
+        max-width: 200px;
+        max-height: inherit;
+      }
+
+      a {
+        font-size: 14px;
+      }
     }
   }
 }

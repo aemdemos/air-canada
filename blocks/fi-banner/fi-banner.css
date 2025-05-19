@@ -5,6 +5,7 @@
   background-color: #fff;
   padding: 30px;
   margin: 50px auto;
+  padding: 24px !important;
 }
 
 /* Banner Image */
@@ -52,7 +53,7 @@
 @media (width <=768px) {
   .fi-banner {
     flex-direction: column;
-    padding: 0;
+    padding: 0 !important;
   }
 
   .fi-banner .fi-title p {

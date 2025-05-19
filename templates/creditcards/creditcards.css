@@ -61,8 +61,15 @@
 }
 
 .card-tabs-container {
-  margin-top: -200px !important;
+  margin-top: -200px;
+
+  @media (width < 768px) {
+    & {
+      margin-top: -70px;
+    }
+  }
 }
+
 
 .card-tabs {
   background-color: white;

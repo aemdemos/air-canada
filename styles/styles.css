@@ -259,12 +259,6 @@ main img {
   width: 100%;
 }
 
-/* sections */
-main>.section>div {
-  margin: 40px 0;
-}
-
-
 main>.section:not(.heros-container)>div>div {
   max-width: 1200px;
   margin: auto;
