@@ -8,6 +8,7 @@ export default function decorate(document) {
   heros.forEach((hero, i) => {
     hero.dataset.tabIndex = i;
     const clonedHero = hero.cloneNode(true);
+    clonedHero.classList.add('hero-wrapper-cloned');
     hero.classList.add('hero-wrapper-original');
     heroContainer.append(clonedHero);
   });
