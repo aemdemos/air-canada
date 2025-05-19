@@ -13,6 +13,12 @@ import { decorateMain } from './scripts.js';
 
 async function applyChanges(event) {
   document.querySelectorAll('.hero-wrapper-cloned').forEach((hero) => {
+    // hero remove all data properties that start with 'data-aue'
+    Object.keys(hero.dataset).forEach((key) => {
+      if (key.startsWith('data-aue')) {
+        delete hero.dataset[key];
+      }
+    });
     hero.remove();
   });
 
