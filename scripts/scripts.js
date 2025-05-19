@@ -65,6 +65,7 @@ function buildTabs(main) {
   const tabContainer = document.createElement('div');
   tabContainer.className = 'section';
 
+  let tabIndex = 0;
   /* for each section create a tab object that has the sectionEl and the sectionMeta block */
   const tabs = [...main.querySelectorAll(':scope > div')]
     .map((section, i) => {
@@ -74,7 +75,8 @@ function buildTabs(main) {
         // we only care about our sections
         if (meta.cardbanner && meta.cardtitle && meta.cardimage && meta.cardtype) {
           section.classList.add('tabs-panel');
-          section.setAttribute('data-tab-index', i - 1);
+          section.setAttribute('data-tab-index', tabIndex);
+          tabIndex += 1;
           return [section, sectionMeta];
         }
       }
