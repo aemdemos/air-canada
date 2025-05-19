@@ -7,7 +7,9 @@ export default function decorate(document) {
   const heros = document.querySelectorAll('.hero-wrapper');
   heros.forEach((hero, i) => {
     hero.dataset.tabIndex = i;
-    heroContainer.append(hero);
+    const clonedHero = hero.cloneNode(true);
+    hero.classList.add('hero-wrapper-original');
+    heroContainer.append(clonedHero);
   });
 
   main.insertBefore(heroContainer, main.children[0]);

@@ -1,3 +1,7 @@
+:root {
+  --hero-wrapper-top-position: -230px;
+}
+
 .two-columns-wrapper,
 .benefit-cards-wrapper,
 .banner-wrapper,
@@ -49,12 +53,22 @@
 }
 
 .tabs-panel.active {
-  transform: translateY(-150px);
+  top: var(--hero-wrapper-top-position);
+  position: relative;
+}
+
+.hero-wrapper-original {
+  display: none !important;
 }
 
 .card-tabs {
   background-color: white;
-  transform: translateY(-160px);
+}
+
+.card-tabs-wrapper {
+  position: relative;
+  z-index: 2;
+  top: var(--hero-wrapper-top-position);
 }
 
 .card-tabs-container {
