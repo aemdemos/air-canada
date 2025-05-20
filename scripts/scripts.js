@@ -68,7 +68,7 @@ function buildTabs(main) {
   let tabIndex = 0;
   /* for each section create a tab object that has the sectionEl and the sectionMeta block */
   const tabs = [...main.querySelectorAll(':scope > div')]
-    .map((section, i) => {
+    .map((section) => {
       const sectionMeta = section.querySelector('div.section-metadata');
       if (sectionMeta) {
         const meta = readBlockConfig(sectionMeta);
