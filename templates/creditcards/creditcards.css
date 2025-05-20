@@ -20,6 +20,10 @@
 }
 
 .aeroplan-point-cards-wrapper {
+  .aeroplan-point-cards {
+    max-width: 1440px !important;
+  }
+
   background: linear-gradient(to top, #ddecf5, #fff);
 
   .aeroplan-point-cards {
