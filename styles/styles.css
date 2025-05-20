@@ -462,3 +462,12 @@ main .section.highlight {
   border: none;
   padding: 0;
 }
+
+.cnd-flag {
+  background-image: url("../icons/flag-ca.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 15px;
+  padding-right: 10px;
+}

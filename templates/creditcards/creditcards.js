@@ -2,10 +2,8 @@ export default function decorate(document) {
   const pageHeader = document.createElement('div');
   pageHeader.classList.add('page-header');
 
-  const flag = document.createElement('img');
-  flag.src = '/icons/flag-ca.png';
-  flag.alt = 'Canada Flag';
-  flag.classList.add('flag');
+  const flag = document.createElement('div');
+  flag.classList.add('cnd-flag');
 
   const accessibilityLink = document.createElement('a');
   accessibilityLink.classList.add('accessibility-link');
