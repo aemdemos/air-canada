@@ -41,6 +41,12 @@ export function createTabs(block) {
   }
 }
 
+function updateTitleForSelectedCard(target, mobileContainer) {
+  const clonedTitleEl = target.querySelector('.tab-item-title').cloneNode(true);
+  clonedTitleEl.innerHTML = clonedTitleEl.innerHTML.replace(/<br\s*\/?>/gi, ' ');
+  mobileContainer.querySelector('.mobile-content').innerHTML = clonedTitleEl.innerHTML;
+}
+
 /**
  * @param {HTMLElement} $block
  */
@@ -53,7 +59,7 @@ export default function decorate($block) {
 
   tabNavContainer.append(container);
 
-  const title = document.createElement('h2');
+  const title = document.createElement('h1');
   title.textContent = 'TD® Aeroplan® Personal Credit Cards';
   tabNavContainer.prepend(title);
 
@@ -66,7 +72,7 @@ export default function decorate($block) {
   mobileContainer.classList.add('mobile-cc-container');
   mobileContainer.innerHTML = `
     <span class="dropdown-label">Select a card</span>
-    <span class="mobile-content">TD® Aeroplan® Visa Infinite* Card</span>
+    <span class="mobile-content">XXXX</span>
     <span class="dropdown-arrow closed"></span>
   `;
 
@@ -107,12 +113,22 @@ export default function decorate($block) {
         i.classList.add('active');
       });
 
+      // update the active tab index
       activeTabIndex = newIndex;
 
       mobileContainer.querySelector('.dropdown-arrow').classList.add('closed');
+
+      // update the selected text in the mobile container
+      updateTitleForSelectedCard(event.currentTarget, mobileContainer);
+
+      // dispatch a custom event to update the tab index
       document.dispatchEvent(new CustomEvent('card-tabs-updated', { detail: { tabIndex: activeTabIndex } }));
     });
   });
+
+  if (activeTab) {
+    updateTitleForSelectedCard(activeTab, mobileContainer);
+  }
 
   document.dispatchEvent(new CustomEvent('card-tabs-updated', { detail: { tabIndex: activeTabIndex } }));
 }

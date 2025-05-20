@@ -20,7 +20,7 @@
       }
     }
 
-    h2 {
+    h1 {
       text-align: center;
       padding: 40px 0;
       margin: 0;
@@ -104,8 +104,9 @@
   @media (width < 1024px) {
     .card-tabs {
       .tab-nav-container {
-        h2 {
+        h1 {
           font: normal 300 30px Open Sans;
+          padding: 0px 0 20px 0;
         }
 
         .mobile-cc-container {
