@@ -22,7 +22,7 @@ export default function decorate(document) {
   search.innerHTML = `<div class="search-form-container">
       <label class="search-holder label" for="searchbox_011"></label>
       <input type="text" class="txt-box txt-search-box" id="searchbox_011" placeholder="FIND" value="" role="textbox">
-        <span type="submit" class="icon find btn-ghost" role="button"></span>
+        <span type="submit" class="icon find btn-ghost" role="button" aria-label="Submit"></span>
     </div>`;
 
   pageHeader.appendChild(accessibilityLink);
