@@ -32,12 +32,8 @@ export default function decorate(document) {
   pageHeader.appendChild(language);
   pageHeader.appendChild(search);
 
-
   const header = document.querySelector('header');
   header.appendChild(pageHeader);
-
-
-  document.querySelector('.hero-wrapper').appendChild(pageHeader);
 
   document.addEventListener('card-tabs-updated', (event) => {
     const { tabIndex } = event.detail;

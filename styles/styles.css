@@ -82,6 +82,10 @@ body.appear {
   display: block;
 }
 
+header {
+  background-color: #4A4F55;
+}
+
 header .header,
 footer .footer {
   visibility: hidden;
@@ -354,6 +358,10 @@ main .section.highlight {
 }
 
 .page-header {
+  padding: 0 32px;
+  max-width: 1200px;
+  margin: auto;
+
   background: #4A4F55;
   font-weight: 300;
   min-height: 30px;
@@ -363,8 +371,6 @@ main .section.highlight {
   flex-direction: row;
   align-items: center;
   justify-content: end;
-  margin: 0;
-
 
   .language-link::after {
     content: '';

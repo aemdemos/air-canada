@@ -78,8 +78,6 @@
 
 .card-tabs-wrapper {
   position: relative;
-  z-index: 2;
-  /* top: var(--hero-wrapper-top-position); */
 }
 
 .hero-wrapper {
