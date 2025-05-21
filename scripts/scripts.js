@@ -204,7 +204,7 @@ async function loadEager(doc) {
     }
     document.body.classList.add('appear');
 
-    const heros = main.querySelectorAll('.section.heros-container');
+    const heros = main.querySelectorAll('.section.heros-container .heros>div');
     const [firstHero, secondHero] = heros || [];
     const imageContainer = heros?.length === 3
       ? secondHero
