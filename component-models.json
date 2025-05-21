@@ -145,6 +145,12 @@
     "id": "creditcardsection",
     "fields": [
       {
+        "component": "text",
+        "name": "name",
+        "label": "Section Name",
+        "description": "The label shown for this section in the Content Tree"
+      },
+      {
         "component": "multiselect",
         "name": "style",
         "value": "",
@@ -176,6 +182,30 @@
             "value": "gifts"
           }
         ]
+      },
+      {
+        "component": "richtext",
+        "name": "cardtitle",
+        "label": "Card Title",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "name": "cardimage",
+        "label": "Card Image",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "cardbanner",
+        "label": "Banner Text",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "cardtype",
+        "label": "Card Type",
+        "valueType": "string"
       }
     ]
   },
@@ -583,6 +613,38 @@
     ]
   },
   {
+    "id": "hero-item",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Alt",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "name": "pill",
+        "label": "Pill Text",
+        "value": "",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text"
+      }
+    ]
+  },
+  {
     "id": "offer-banner",
     "fields": [
       {
@@ -598,18 +660,7 @@
     ]
   },
   {
-    "id": "creditcardtabs",
-    "fields": [
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "title",
-        "label": "Title"
-      }
-    ]
-  },
-  {
-    "id": "creditcardtabitem",
+    "id": "cc-item",
     "fields": [
       {
         "component": "richtext",
@@ -640,12 +691,6 @@
         "name": "text",
         "label": "Title",
         "valueType": "string"
-      },
-      {
-        "component": "aem-content",
-        "name": "page",
-        "label": "Credit Card Page",
-        "valueType": "string"
       }
     ]
   },
@@ -663,6 +708,12 @@
   {
     "id": "two-columns-item",
     "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      },
       {
         "component": "reference",
         "valueType": "string",

@@ -1,5 +1,6 @@
 .breadcrumbs-wrapper {
-  margin: 0;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .breadcrumbs {
@@ -21,6 +22,12 @@
   padding: 5px 20px;
   position: relative;
   z-index: 1;
+
+  @media (width < 1260px) {
+    & {
+      padding: 5px 0;
+    }
+  }
 }
 
 /* make the first li item 60px high */

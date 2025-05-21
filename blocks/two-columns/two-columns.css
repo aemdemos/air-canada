@@ -5,6 +5,11 @@
   padding: 0px 8em 0em;
 }
 
+.two-columns .two-columns-title {
+  grid-column: span 2;
+  justify-self: center;
+}
+
 .two-columns h2 {
   margin-bottom: 35px;
 }
@@ -50,5 +55,9 @@
 
   .two-columns .two-columns-container {
     grid-template-columns: 1fr;
+  }
+
+  .two-columns .two-columns-title {
+    grid-column: span 1;
   }
 }

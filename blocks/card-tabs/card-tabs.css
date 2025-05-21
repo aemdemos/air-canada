@@ -1,0 +1,221 @@
+  .card-tabs-container {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0;
+  }
+
+
+
+  .card-tabs {
+    padding: 0 !important;
+
+    .tab-nav-container {
+      background-color: white;
+      padding-top: 20px;
+      box-shadow: 0 -6px 19px -7px rgb(0 0 0 / 20%);
+
+      .mobile-cc-container {
+        display: none;
+      }
+    }
+
+    h1 {
+      text-align: center;
+      padding: 40px 0;
+      margin: 0;
+    }
+  }
+
+  .tabs-panel {
+    width: 100%;
+    box-sizing: border-box;
+    display: none;
+  }
+
+  .tabs-panel.active {
+    display: block;
+  }
+
+  .card-tabs ul {
+    display: flex;
+    flex-wrap: nowrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .tab-item {
+    &.active {
+      background-color: white;
+
+      .tab-item-banner {
+        background: url(../../icons/td-aeroplan-rectangle.svg) no-repeat center center;
+      }
+    }
+
+    height: 254px;
+    cursor: pointer;
+    background-color: #f1f1f1;
+    padding: 20px;
+    display: flex;
+    flex: 1 1 33%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    .tab-item-title {
+      text-align: center;
+      min-width: 220px;
+      margin-bottom: 15px;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .tab-item-image>picture>img {
+      width: 180px;
+      height: 118px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .tab-item-banner {
+      justify-content: center;
+      display: flex;
+      align-items: center;
+      margin-top: -35px;
+      background: url(../../icons/td-aeroplan-rectangle-white.svg) no-repeat center center;
+      background-size: 100% auto;
+      width: 340px;
+      height: 60px;
+      font-size: 14px;
+    }
+
+    .tab-item-card-type {
+      display: none;
+    }
+  }
+
+  /* when less than 1024px */
+  @media (width < 1024px) {
+    .card-tabs {
+      .tab-nav-container {
+        h1 {
+          font: normal 300 30px Open Sans;
+          padding: 0px 0 20px 0;
+        }
+
+        .mobile-cc-container {
+          display: block;
+        }
+      }
+    }
+
+    .card-tabs ul {
+      flex-direction: column;
+
+      li.tab-item {
+        &.active {
+          background-color: #f1f1f1;
+        }
+
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        padding: 5px 30px;
+        border: none;
+        background-color: #fff;
+
+        .tab-item-image,
+        .tab-item-banner {
+          display: none;
+        }
+
+        .tab-item-title {
+          text-align: left;
+          font-size: 16px;
+        }
+
+        .tab-item-card-type {
+          display: block;
+          margin: 0px;
+          min-width: unset;
+          font-weight: 700;
+          color: grey;
+          text-transform: uppercase;
+          font-size: 13px;
+          text-align: left;
+        }
+      }
+    }
+
+    .mobile-cc-container:has(> .closed)+ul {
+      display: none;
+    }
+  }
+
+
+
+  .tab-nav {
+    box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.15);
+  }
+
+  .mobile-cc-container {
+    box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.15);
+    display: block;
+    background-color: #ffffff;
+    padding: 15px 30px;
+    text-align: left;
+    position: relative;
+  }
+
+  .mobile-cc-container .dropdown-label {
+    font-size: 12px;
+    line-height: 1.75;
+    color: #4a4f55;
+    display: block;
+  }
+
+  .mobile-cc-container .mobile-content {
+    font: normal 600 18px Open Sans;
+    color: #000;
+  }
+
+  .mobile-cc-container .dropdown-arrow {
+    content: url(/icons/icon-down-arrow.svg);
+    display: block;
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    float: left;
+    margin-right: 0px;
+    margin-top: -3px;
+    break-inside: avoid;
+    transition: transform 0.3s ease-in-out;
+    transform: rotate(180deg);
+    position: absolute;
+    top: 50%;
+    right: 20px;
+
+    &.closed {
+      transform: rotate(0deg);
+    }
+
+    @media (width < 1024px) {
+      & {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    @media (width < 768px) {
+      & {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }

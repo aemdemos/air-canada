@@ -58,6 +58,12 @@
       "id": "creditcardsection",
       "fields": [
         {
+          "component": "text",
+          "name": "name",
+          "label": "Section Name",
+          "description": "The label shown for this section in the Content Tree"
+        },
+        {
           "component": "multiselect",
           "name": "style",
           "value": "",
@@ -89,6 +95,30 @@
               "value": "gifts"
             }
           ]
+        },
+        {
+          "component": "richtext",
+          "name": "cardtitle",
+          "label": "Card Title",
+          "valueType": "string"
+        },
+        {
+          "component": "reference",
+          "name": "cardimage",
+          "label": "Card Image",
+          "valueType": "string"
+        },
+        {
+          "component": "richtext",
+          "name": "cardbanner",
+          "label": "Banner Text",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "cardtype",
+          "label": "Card Type",
+          "valueType": "string"
         }
       ]
     }
@@ -103,7 +133,8 @@
         "title",
         "cards",
         "columns",
-        "fragment"
+        "fragment",
+        "tabs"
       ]
     },
     {
@@ -116,6 +147,7 @@
         "button",
         "title",
         "hero",
+        "heros",
         "cards",
         "columns",
         "fragment",

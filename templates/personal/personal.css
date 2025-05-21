@@ -1,84 +1,44 @@
+@import './tabs-tab.css';
+
 .personal-template {
-  .hero-wrapper-holder {
-    min-height: 500px;
-    max-width: unset;
-    padding: 0;
+  .tabs-list {
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    font-size: var(--body-font-size-xs);
   }
 
-  .hero-wrapper {
-    display: block;
+  @media (width >=600px) {
+    .tabs-list {
+      font-size: var(--body-font-size-s);
+    }
   }
 
-  .hero-wrapper:not(.active) {
+  @media (width >=900px) {
+    .tabs-list {
+      font-size: var(--body-font-size-m);
+    }
+  }
+
+
+  .tabs-list button p {
+    margin: 0;
+  }
+
+
+  .tabs-list button[aria-selected='true'] {
+    border-bottom: 1px solid var(--background-color);
+    background-color: var(--background-color);
+    cursor: initial;
+  }
+
+  .tabs-panel {
+    margin-top: -1px;
+    padding: 24px;
+    border: 1px solid #dadada;
+    overflow: auto;
+  }
+
+  .tabs-panel[aria-hidden='true'] {
     display: none;
   }
-
-  .pages {
-    >div {
-      max-width: unset;
-      padding: 0;
-    }
-
-    .section.benefit-cards-container,
-    .section.two-columns-container,
-    .section.card-details-container,
-    .section.breadcrumbs-container,
-    .section.hero-container {
-      padding: 0;
-      margin: 0;
-    }
-
-    .section.aeroplan-point-cards-container,
-    .section.benefit-cards-container {
-      max-width: 100%;
-      display: flex;
-      justify-content: center;
-    }
-
-    .section.aeroplan-point-cards-container .aeroplan-point-cards-wrapper {
-      max-width: 1440px;
-    }
-
-    .section.card-details-container {
-      margin-bottom: 50px;
-      padding: 30px;
-    }
-
-    .section.benefit-cards-container,
-    .section.two-columns-container,
-    .section.card-details-container {
-      max-width: 100%;
-      padding: 50px 0;
-
-      &>div {
-        max-width: 1000px;
-        margin: auto;
-        padding: 0 24px;
-      }
-    }
-
-    .cc-page {
-      display: none !important;
-    }
-
-    .cc-page.active {
-      display: block !important;
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-wrapper-holder {
-    min-height: 270px !important;
-  }
-
-  .cards-template .card-details-container {
-    padding: 0;
-  }
-
-  h3 {
-    font: normal 600 16px 'Open Sans';
-    text-align: center;
-    margin-bottom: 25px;
-  }
-}

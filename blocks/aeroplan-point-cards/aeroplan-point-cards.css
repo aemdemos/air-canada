@@ -62,17 +62,22 @@
 .aeroplan-point-cards .cards-card-image {
   opacity: 0.91;
   overflow: hidden;
-  aspect-ratio: 16 / 9;
   width: 100%;
   position: relative;
-  overflow: hidden;
+  overflow: initial;
   display: flex;
   justify-content: center;
   align-items: center;
 
+  picture {
+    width: 100%;
+    height: 100%;
+  }
+
   img {
     height: 100%;
     width: auto;
+    aspect-ratio: 2 / 1;
     object-fit: cover;
   }
 }
@@ -116,13 +121,13 @@
   align-items: center;
   position: absolute;
   right: 4%;
-  bottom: 0;
+  bottom: -30px;
   color: #fff !important;
   width: 70px;
   height: 70px;
   text-align: center;
   box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
-  background-color: #d8292f;
+  background-color: #B30F0F;
   border-radius: 50%;
   z-index: 1;
   font-weight: bold;
@@ -131,6 +136,16 @@
   p {
     padding: 0;
     margin: 0;
+  }
+
+  @media (width <=1024px) {
+    width: 60px;
+    height: 60px;
+  }
+
+  @media (width <=768px) {
+    width: 50px;
+    height: 50px;
   }
 }
 
@@ -189,7 +204,7 @@
 
 .light-blue-bg.gifts .aeroplan-point-cards-wrapper {
   background-image:
-    url(../../icons/td-gifts-2-estore-en.png),
+    url(../../icons/td-gifts-2-estore-en.webp),
     linear-gradient(to top, #ddecf5, #fff);
 
   background-repeat: no-repeat;

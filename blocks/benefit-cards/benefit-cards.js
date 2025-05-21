@@ -27,7 +27,7 @@ export default function benefitCards(block) {
     rightArrow.className = 'carousel-arrow right';
     rightArrow.setAttribute('aria-label', 'Next');
 
-    const track = document.createElement('div');
+    const track = document.createElement('ul');
     track.className = 'carousel-track';
 
     const dots = document.createElement('div');

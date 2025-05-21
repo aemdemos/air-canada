@@ -32,8 +32,8 @@
   }
 }
 
-.benefit-cards .benefit-card h5 {
-  font-weight: 600;
+.benefit-cards .benefit-card {
+  font: normal 600 14px 'Open Sans'
 }
 
 .benefit-cards .benefit-card img {

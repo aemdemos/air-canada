@@ -21,20 +21,20 @@ function closeOnEscape(e) {
   }
 }
 
-function closeOnFocusLost(e) {
-  const nav = e.currentTarget;
-  if (!nav.contains(e.relatedTarget)) {
-    const navSections = nav.querySelector('.nav-sections');
-    const navSectionExpanded = navSections.querySelector('[aria-expanded="true"]');
-    if (navSectionExpanded && isDesktop.matches) {
-      // eslint-disable-next-line no-use-before-define
-      toggleAllNavSections(navSections, false);
-    } else if (!isDesktop.matches) {
-      // eslint-disable-next-line no-use-before-define
-      toggleMenu(nav, navSections, false);
-    }
-  }
-}
+// function closeOnFocusLost(e) {
+//   const nav = e.currentTarget;
+//   if (!nav.contains(e.relatedTarget)) {
+//     const navSections = nav.querySelector('.nav-sections');
+//     const navSectionExpanded = navSections.querySelector('[aria-expanded="true"]');
+//     if (navSectionExpanded && isDesktop.matches) {
+//       // eslint-disable-next-line no-use-before-define
+//       toggleAllNavSections(navSections, false);
+//     } else if (!isDesktop.matches) {
+//       // eslint-disable-next-line no-use-before-define
+//       toggleMenu(nav, navSections, false);
+//     }
+//   }
+// }
 
 function openOnKeydown(e) {
   const focused = document.activeElement;
@@ -58,6 +58,12 @@ function focusNavSection() {
  */
 function toggleAllNavSections(sections, expanded = false) {
   sections.querySelectorAll('.nav-sections .default-content-wrapper > ul > li').forEach((section) => {
+    section.setAttribute('aria-expanded', expanded);
+  });
+}
+
+function toggleAllMobileNavSections(sections, expanded = false) {
+  sections.querySelectorAll('.nav-sections.mobile .default-content-wrapper > ul > li').forEach((section) => {
     section.setAttribute('aria-expanded', expanded);
   });
 }
@@ -95,11 +101,8 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
   if (!expanded || isDesktop.matches) {
     // collapse menu on escape press
     window.addEventListener('keydown', closeOnEscape);
-    // collapse menu on focus lost
-    nav.addEventListener('focusout', closeOnFocusLost);
   } else {
     window.removeEventListener('keydown', closeOnEscape);
-    nav.removeEventListener('focusout', closeOnFocusLost);
   }
 }
 
@@ -112,6 +115,7 @@ export default async function decorate(block) {
   const navMeta = getMetadata('nav');
   const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
   const fragment = await loadFragment(navPath);
+  const mobileFragment = await loadFragment('/mobilenav');
 
   // decorate nav DOM
   block.textContent = '';
@@ -124,6 +128,11 @@ export default async function decorate(block) {
     const section = nav.children[i];
     if (section) section.classList.add(`nav-${c}`);
   });
+
+  if (mobileFragment) {
+    mobileFragment.firstElementChild.classList.add('mobile', 'nav-sections');
+    nav.append(mobileFragment.firstElementChild);
+  }
 
   const navBrand = nav.querySelector('.nav-brand');
   const brandLink = navBrand.querySelector('.button');
@@ -146,6 +155,18 @@ export default async function decorate(block) {
     });
   }
 
+  const navMobile = nav.querySelector('.mobile');
+  if (navMobile) {
+    navMobile.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
+      if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
+      navSection.addEventListener('click', () => {
+        const expanded = navSection.getAttribute('aria-expanded') === 'true';
+        toggleAllMobileNavSections(navSection);
+        navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+      });
+    });
+  }
+
   // hamburger for mobile
   const hamburger = document.createElement('div');
   hamburger.classList.add('nav-hamburger');
@@ -155,6 +176,7 @@ export default async function decorate(block) {
   hamburger.addEventListener('click', () => toggleMenu(nav, navSections));
   nav.prepend(hamburger);
   nav.setAttribute('aria-expanded', 'false');
+
   // prevent mobile nav behavior on window resize
   toggleMenu(nav, navSections, isDesktop.matches);
   isDesktop.addEventListener('change', () => toggleMenu(nav, navSections, isDesktop.matches));

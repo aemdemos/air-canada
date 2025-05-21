@@ -11,6 +11,8 @@ import {
   loadSections,
   loadCSS,
   getMetadata,
+  buildBlock,
+  readBlockConfig,
 } from './aem.js';
 
 /**
@@ -59,13 +61,68 @@ async function loadFonts() {
   }
 }
 
+function buildTabs(main) {
+  const tabContainer = document.createElement('div');
+  tabContainer.className = 'section';
+
+  let tabIndex = 0;
+  /* for each section create a tab object that has the sectionEl and the sectionMeta block */
+  const tabs = [...main.querySelectorAll(':scope > div')]
+    .map((section) => {
+      const sectionMeta = section.querySelector('div.section-metadata');
+      if (sectionMeta) {
+        const meta = readBlockConfig(sectionMeta);
+        // we only care about our sections
+        if (meta.cardbanner && meta.cardtitle && meta.cardimage && meta.cardtype) {
+          section.classList.add('tabs-panel');
+          section.setAttribute('data-tab-index', tabIndex);
+          tabIndex += 1;
+          return [section, sectionMeta];
+        }
+      }
+      return null;
+    })
+    .filter((el) => !!el);
+
+  if (tabs.length) {
+    const section = document.createElement('div');
+    section.className = 'section';
+
+    const ul = document.createElement('ul');
+    // for each section return an li that has the raw section metadata
+    ul.append(
+      ...tabs
+        .map(([, sectionMetadata], index) => {
+          const li = document.createElement('li');
+          li.classList.add('tab-item');
+          li.setAttribute('data-tab-index', index);
+          li.innerHTML = sectionMetadata.innerHTML;
+          sectionMetadata.remove();
+          return li;
+        }),
+    );
+
+    /* build the tabs block */
+    const tabsBlock = buildBlock('card-tabs', [[ul]]);
+    section.append(tabsBlock);
+
+    // insert the section before the first tabs-panel
+    const firstTabsPanel = main.querySelector('.tabs-panel');
+    if (firstTabsPanel) {
+      main.insertBefore(section, firstTabsPanel);
+    } else {
+      main.appendChild(section);
+    }
+  }
+}
+
 /**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
-function buildAutoBlocks() {
+function buildAutoBlocks(main) {
   try {
-    // TODO: add auto block, if needed
+    buildTabs(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
@@ -146,17 +203,23 @@ async function loadEager(doc) {
       await loadTemplate(doc, templateName);
     }
     document.body.classList.add('appear');
-    await loadSection(main.querySelector('.section'), waitForFirstImage);
-  }
 
-  try {
-    /* if desktop (proxy for fast connection) or fonts already loaded, load fonts.css */
-    if (window.innerWidth >= 900 || sessionStorage.getItem('fonts-loaded')) {
-      loadFonts();
-    }
-  } catch (e) {
-    // do nothing
+    const heros = main.querySelectorAll('.section.heros-container .heros>div');
+    const [firstHero, secondHero] = heros || [];
+    const imageContainer = heros?.length === 3
+      ? secondHero
+      : (firstHero || main.querySelector('.section'));
+    await loadSection(imageContainer, waitForFirstImage);
   }
+}
+
+try {
+  /* if desktop (proxy for fast connection) or fonts already loaded, load fonts.css */
+  if (window.innerWidth >= 900 || sessionStorage.getItem('fonts-loaded')) {
+    loadFonts();
+  }
+} catch (e) {
+  // do nothing
 }
 
 /**
