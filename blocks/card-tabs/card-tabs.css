@@ -190,18 +190,32 @@
     display: block;
     width: 24px;
     height: 24px;
-    -o-object-fit: contain;
     object-fit: contain;
     float: left;
     margin-right: 0px;
     margin-top: -3px;
-    -webkit-column-break-inside: avoid;
     break-inside: avoid;
-    float: right;
     transition: transform 0.3s ease-in-out;
     transform: rotate(180deg);
+    position: absolute;
+    top: 50%;
+    right: 20px;
 
     &.closed {
       transform: rotate(0deg);
+    }
+
+    @media (width < 1024px) {
+      & {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    @media (width < 768px) {
+      & {
+        width: 16px;
+        height: 16px;
+      }
     }
   }
