@@ -104,11 +104,9 @@ body.appear {
 }
 
 header {
-  background-color: #4A4F55;
+  background-color: white;
   height: calc(var(--header-nav-height) + var(--language-height));
 }
-
-
 
 header .header,
 footer .footer {
@@ -118,6 +116,20 @@ footer .footer {
 header .header[data-block-status="loaded"],
 footer .footer[data-block-status="loaded"] {
   visibility: visible;
+}
+
+header .page-header-wrapper {
+  background-color: #4A4F55;
+  height: var(--language-height);
+  padding-top: 1px;
+  padding-bottom: 4px;
+
+  @media (width < 1024px) {
+    & {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
 }
 
 h1,
