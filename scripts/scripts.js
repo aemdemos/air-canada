@@ -203,17 +203,23 @@ async function loadEager(doc) {
       await loadTemplate(doc, templateName);
     }
     document.body.classList.add('appear');
-    await loadSection(main.querySelector('.section'), waitForFirstImage);
-  }
 
-  try {
-    /* if desktop (proxy for fast connection) or fonts already loaded, load fonts.css */
-    if (window.innerWidth >= 900 || sessionStorage.getItem('fonts-loaded')) {
-      loadFonts();
-    }
-  } catch (e) {
-    // do nothing
+    const heros = main.querySelectorAll('.section.heros-container');
+    const [firstHero, secondHero] = heros || [];
+    const imageContainer = heros?.length === 3
+      ? secondHero
+      : (firstHero || main.querySelector('.section'));
+    await loadSection(imageContainer, waitForFirstImage);
   }
+}
+
+try {
+  /* if desktop (proxy for fast connection) or fonts already loaded, load fonts.css */
+  if (window.innerWidth >= 900 || sessionStorage.getItem('fonts-loaded')) {
+    loadFonts();
+  }
+} catch (e) {
+  // do nothing
 }
 
 /**
