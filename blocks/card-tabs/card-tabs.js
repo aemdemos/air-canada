@@ -1,3 +1,5 @@
+import { createOptimizedPicture } from '../../scripts/aem.js';
+
 /**
  * @typedef TabInfo
  * @property {string} name
@@ -22,13 +24,20 @@ export function createTabs(block) {
     let image = '';
     let banner = '';
     let cardType = '';
-    [title, image, banner, cardType] = Array.from(ti.querySelectorAll('div>div:nth-child(2)')).map((div) => div.innerHTML);
+    [title, image, banner, cardType] = Array.from(ti.querySelectorAll('div>div:nth-child(2)'));
+
+    if (image && image.querySelector('img')) {
+      const imgSrc = image.querySelector('img');
+      image = createOptimizedPicture(imgSrc.src, imgSrc.alt, true, [
+        { width: '180' },
+      ]).outerHTML;
+    }
 
     ti.innerHTML = `
-      <div class="tab-item-title">${title}</div>
+      <div class="tab-item-title">${title.innerHTML}</div>
       <div class="tab-item-image">${image}</div>
-      <div class="tab-item-banner">${banner}</div>
-      <div class="tab-item-card-type">${cardType}</div>
+      <div class="tab-item-banner">${banner.innerHTML}</div>
+      <div class="tab-item-card-type">${cardType.innerHTML}</div>
     `;
   });
 
