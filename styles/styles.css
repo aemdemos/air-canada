@@ -18,11 +18,32 @@
   --text-color: #131313;
   --link-color: #3b63fb;
   --link-hover-color: #1d3ecf;
-  --nav-height: 80px;
+
+  --header-nav-brand-height: 28px;
+  --header-nav-brand-width: 240px;
+  --header-nav-height: 86px;
+  --language-height: 30px;
+
+  @media (width < 1024px) {
+    --language-height: 0px;
+  }
+
+  /* if less than 900px, set the nav height to 60px */
+  @media (width < 900px) {
+    --header-nav-height: 80px;
+  }
+
+  /* if less than 768px then hide the brand */
+  @media (width < 768px) {
+    --header-nav-height: 60px;
+  }
 
   /* fonts */
-  --body-font-family: 'Open Sans', arial;
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
+  --body-font-family: 'Open Sans',
+  arial;
+  --heading-font-family: roboto-condensed,
+  roboto-condensed-fallback,
+  sans-serif;
 
   /* body sizes */
   --body-font-size-m: 22px;
@@ -83,8 +104,11 @@ body.appear {
 }
 
 header {
-  background-color: #4A4F55;
+  background-color: white;
+  height: calc(var(--header-nav-height) + var(--language-height));
 }
+
+
 
 header .header,
 footer .footer {
