@@ -1,6 +1,9 @@
 export default function decorate(document) {
   const pageHeader = document.createElement('div');
   pageHeader.classList.add('page-header');
+  const pageHeaderWrapper = document.createElement('div');
+  pageHeaderWrapper.classList.add('page-header-wrapper');
+  pageHeaderWrapper.appendChild(pageHeader);
 
   const flag = document.createElement('div');
   flag.classList.add('cnd-flag');
@@ -31,7 +34,7 @@ export default function decorate(document) {
   pageHeader.appendChild(search);
 
   const header = document.querySelector('header');
-  header.appendChild(pageHeader);
+  header.appendChild(pageHeaderWrapper);
 
   document.addEventListener('card-tabs-updated', (event) => {
     const { tabIndex } = event.detail;

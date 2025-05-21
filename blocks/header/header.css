@@ -162,7 +162,7 @@ header .nav-brand {
   font-weight: 700;
   line-height: 1;
 
-  @media (width < 768px) {
+  @media (width < 900px) {
     display: none;
   }
 }
