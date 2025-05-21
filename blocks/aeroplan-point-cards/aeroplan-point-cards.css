@@ -62,7 +62,6 @@
 .aeroplan-point-cards .cards-card-image {
   opacity: 0.91;
   overflow: hidden;
-
   width: 100%;
   position: relative;
   overflow: initial;
@@ -76,9 +75,8 @@
   }
 
   img {
-    height: 100%;
-    width: auto;
-    aspect-ratio: 720 / 360;
+    aspect-ratio: 2 / 1;
+    object-fit: cover;
   }
 }
 
