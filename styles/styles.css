@@ -104,7 +104,7 @@ body.appear {
 }
 
 header {
-  background-color: white;
+  background-color: #4A4F55;
   height: calc(var(--header-nav-height) + var(--language-height));
 }
 
